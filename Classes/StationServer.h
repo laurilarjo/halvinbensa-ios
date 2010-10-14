@@ -7,6 +7,9 @@
 //
 
 #import <MapKit/MapKit.h>
+#import "StationAnnotation.h"
+#import "Debug.h"
+#import "FileReaderHelper.h"
 
 @interface StationServer : NSObject 
 {
