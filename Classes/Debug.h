@@ -6,6 +6,8 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
+//Aputiedosto joka määrittelee käteviä macroja
+
 #define DEBUG_LOG 1
 
 // Helpful macros provided by Stephen Burlos, http://blog.coriolis.ch/2009/01/05/macros-for-xcode/
