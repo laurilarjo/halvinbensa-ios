@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* HalvinBensaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* HalvinBensaAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
+		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		FA5F68E0126640AC00A332F1 /* FileReaderHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F68DF126640AC00A332F1 /* FileReaderHelper.m */; };
+		FA5F6A2B1266660500A332F1 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F6A221266660500A332F1 /* NSObject+SBJSON.m */; };
+		FA5F6A2C1266660500A332F1 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F6A241266660500A332F1 /* NSString+SBJSON.m */; };
+		FA5F6A2D1266660500A332F1 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F6A261266660500A332F1 /* SBJsonBase.m */; };
+		FA5F6A2E1266660500A332F1 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F6A281266660500A332F1 /* SBJsonParser.m */; };
+		FA5F6A2F1266660500A332F1 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F6A2A1266660500A332F1 /* SBJsonWriter.m */; };
+		FA5F6D3D1267699D00A332F1 /* PriceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F6D3C1267699D00A332F1 /* PriceItem.m */; };
+		FAC0C7901264EA8800BF955A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC0C78F1264EA8800BF955A /* MapKit.framework */; };
+		FAC0C7B71264EDAD00BF955A /* StationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC0C7B61264EDAD00BF955A /* StationAnnotation.m */; };
+		FAC0C8121264F99000BF955A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC0C8111264F99000BF955A /* DetailViewController.m */; };
+		FAC0C8141264FA0C00BF955A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC0C8131264FA0C00BF955A /* DetailViewController.xib */; };
+		FAC0CA09126513F500BF955A /* StationServer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC0CA08126513F500BF955A /* StationServer.m */; };
+		FAC0CA131265140200BF955A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC0CA121265140200BF955A /* CoreData.framework */; };
+		FAC0CA18126518DB00BF955A /* StationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC0CA17126518DB00BF955A /* StationItem.m */; };
+		FAE3B90F1265E7C7003AD43C /* mesh_grey_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE3B90E1265E7C7003AD43C /* mesh_grey_bg.jpg */; };
+		FAE3B9661265F5D8003AD43C /* light_grey_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE3B9651265F5D8003AD43C /* light_grey_bg.jpg */; };
+		FAE3B96B1265FC7D003AD43C /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE3B9691265FC7D003AD43C /* check.png */; };
+		FAE3B96C1265FC7D003AD43C /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE3B96A1265FC7D003AD43C /* close.png */; };
+		FAE3B97512660A14003AD43C /* UpdatePriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE3B97412660A14003AD43C /* UpdatePriceViewController.m */; };
+		FAE3B99E12660DE7003AD43C /* UpdatePriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE3B99D12660DE7003AD43C /* UpdatePriceViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* HalvinBensaAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalvinBensaAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* HalvinBensaAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalvinBensaAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* HalvinBensa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HalvinBensa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AAE50D9B0CCF005BE974 /* HalvinBensa_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalvinBensa_Prefix.pch; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* HalvinBensa-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HalvinBensa-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		FA5F68DE126640AC00A332F1 /* FileReaderHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileReaderHelper.h; sourceTree = "<group>"; };
+		FA5F68DF126640AC00A332F1 /* FileReaderHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileReaderHelper.m; sourceTree = "<group>"; };
+		FA5F68E71266411900A332F1 /* Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug.h; sourceTree = "<group>"; };
+		FA5F6A201266660500A332F1 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		FA5F6A211266660500A332F1 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		FA5F6A221266660500A332F1 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		FA5F6A231266660500A332F1 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		FA5F6A241266660500A332F1 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		FA5F6A251266660500A332F1 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		FA5F6A261266660500A332F1 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		FA5F6A271266660500A332F1 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		FA5F6A281266660500A332F1 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		FA5F6A291266660500A332F1 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		FA5F6A2A1266660500A332F1 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		FA5F6D3B1267699D00A332F1 /* PriceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceItem.h; sourceTree = "<group>"; };
+		FA5F6D3C1267699D00A332F1 /* PriceItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceItem.m; sourceTree = "<group>"; };
+		FAC0C78F1264EA8800BF955A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FAC0C7B51264EDAD00BF955A /* StationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationAnnotation.h; sourceTree = "<group>"; };
+		FAC0C7B61264EDAD00BF955A /* StationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationAnnotation.m; sourceTree = "<group>"; };
+		FAC0C8101264F99000BF955A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		FAC0C8111264F99000BF955A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		FAC0C8131264FA0C00BF955A /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		FAC0CA07126513F500BF955A /* StationServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationServer.h; sourceTree = "<group>"; };
+		FAC0CA08126513F500BF955A /* StationServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationServer.m; sourceTree = "<group>"; };
+		FAC0CA121265140200BF955A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FAC0CA16126518DB00BF955A /* StationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationItem.h; sourceTree = "<group>"; };
+		FAC0CA17126518DB00BF955A /* StationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationItem.m; sourceTree = "<group>"; };
+		FAE3B90E1265E7C7003AD43C /* mesh_grey_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = mesh_grey_bg.jpg; path = images/mesh_grey_bg.jpg; sourceTree = "<group>"; };
+		FAE3B9651265F5D8003AD43C /* light_grey_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = light_grey_bg.jpg; path = images/light_grey_bg.jpg; sourceTree = "<group>"; };
+		FAE3B9691265FC7D003AD43C /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = check.png; path = images/check.png; sourceTree = "<group>"; };
+		FAE3B96A1265FC7D003AD43C /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = images/close.png; sourceTree = "<group>"; };
+		FAE3B97312660A14003AD43C /* UpdatePriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePriceViewController.h; sourceTree = "<group>"; };
+		FAE3B97412660A14003AD43C /* UpdatePriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePriceViewController.m; sourceTree = "<group>"; };
+		FAE3B99D12660DE7003AD43C /* UpdatePriceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdatePriceViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				FAC0C7901264EA8800BF955A /* MapKit.framework in Frameworks */,
+				FAC0CA131265140200BF955A /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FA5F6A1F1266660500A332F1 /* JSON */,
+				1D3623240D0F684500981E51 /* HalvinBensaAppDelegate.h */,
+				1D3623250D0F684500981E51 /* HalvinBensaAppDelegate.m */,
+				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
+				28C286E00D94DF7D0034E888 /* RootViewController.m */,
+				FAC0C8101264F99000BF955A /* DetailViewController.h */,
+				FAC0C8111264F99000BF955A /* DetailViewController.m */,
+				FAE3B97312660A14003AD43C /* UpdatePriceViewController.h */,
+				FAE3B97412660A14003AD43C /* UpdatePriceViewController.m */,
+				FAC0CA07126513F500BF955A /* StationServer.h */,
+				FAC0CA08126513F500BF955A /* StationServer.m */,
+				FAC0C7B51264EDAD00BF955A /* StationAnnotation.h */,
+				FAC0C7B61264EDAD00BF955A /* StationAnnotation.m */,
+				FAC0CA16126518DB00BF955A /* StationItem.h */,
+				FAC0CA17126518DB00BF955A /* StationItem.m */,
+				FA5F68DE126640AC00A332F1 /* FileReaderHelper.h */,
+				FA5F68DF126640AC00A332F1 /* FileReaderHelper.m */,
+				FA5F68E71266411900A332F1 /* Debug.h */,
+				FA5F6D3B1267699D00A332F1 /* PriceItem.h */,
+				FA5F6D3C1267699D00A332F1 /* PriceItem.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* HalvinBensa.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AAE50D9B0CCF005BE974 /* HalvinBensa_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAE3B9691265FC7D003AD43C /* check.png */,
+				FAE3B96A1265FC7D003AD43C /* close.png */,
+				FAE3B9651265F5D8003AD43C /* light_grey_bg.jpg */,
+				FAE3B90E1265E7C7003AD43C /* mesh_grey_bg.jpg */,
+				28F335F01007B36200424DE2 /* RootViewController.xib */,
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* HalvinBensa-Info.plist */,
+				FAC0C8131264FA0C00BF955A /* DetailViewController.xib */,
+				FAE3B99D12660DE7003AD43C /* UpdatePriceViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+				FAC0C78F1264EA8800BF955A /* MapKit.framework */,
+				FAC0CA121265140200BF955A /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA5F6A1F1266660500A332F1 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				FA5F6A201266660500A332F1 /* JSON.h */,
+				FA5F6A211266660500A332F1 /* NSObject+SBJSON.h */,
+				FA5F6A221266660500A332F1 /* NSObject+SBJSON.m */,
+				FA5F6A231266660500A332F1 /* NSString+SBJSON.h */,
+				FA5F6A241266660500A332F1 /* NSString+SBJSON.m */,
+				FA5F6A251266660500A332F1 /* SBJsonBase.h */,
+				FA5F6A261266660500A332F1 /* SBJsonBase.m */,
+				FA5F6A271266660500A332F1 /* SBJsonParser.h */,
+				FA5F6A281266660500A332F1 /* SBJsonParser.m */,
+				FA5F6A291266660500A332F1 /* SBJsonWriter.h */,
+				FA5F6A2A1266660500A332F1 /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* HalvinBensa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "HalvinBensa" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HalvinBensa;
+			productName = HalvinBensa;
+			productReference = 1D6058910D05DD3D006BFB54 /* HalvinBensa.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "HalvinBensa" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* HalvinBensa */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
+				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
+				FAC0C8141264FA0C00BF955A /* DetailViewController.xib in Resources */,
+				FAE3B90F1265E7C7003AD43C /* mesh_grey_bg.jpg in Resources */,
+				FAE3B9661265F5D8003AD43C /* light_grey_bg.jpg in Resources */,
+				FAE3B96B1265FC7D003AD43C /* check.png in Resources */,
+				FAE3B96C1265FC7D003AD43C /* close.png in Resources */,
+				FAE3B99E12660DE7003AD43C /* UpdatePriceViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* HalvinBensaAppDelegate.m in Sources */,
+				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
+				FAC0C7B71264EDAD00BF955A /* StationAnnotation.m in Sources */,
+				FAC0C8121264F99000BF955A /* DetailViewController.m in Sources */,
+				FAC0CA09126513F500BF955A /* StationServer.m in Sources */,
+				FAC0CA18126518DB00BF955A /* StationItem.m in Sources */,
+				FAE3B97512660A14003AD43C /* UpdatePriceViewController.m in Sources */,
+				FA5F68E0126640AC00A332F1 /* FileReaderHelper.m in Sources */,
+				FA5F6A2B1266660500A332F1 /* NSObject+SBJSON.m in Sources */,
+				FA5F6A2C1266660500A332F1 /* NSString+SBJSON.m in Sources */,
+				FA5F6A2D1266660500A332F1 /* SBJsonBase.m in Sources */,
+				FA5F6A2E1266660500A332F1 /* SBJsonParser.m in Sources */,
+				FA5F6A2F1266660500A332F1 /* SBJsonWriter.m in Sources */,
+				FA5F6D3D1267699D00A332F1 /* PriceItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Downloads\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HalvinBensa_Prefix.pch;
+				INFOPLIST_FILE = "HalvinBensa-Info.plist";
+				PRODUCT_NAME = HalvinBensa;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Downloads\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HalvinBensa_Prefix.pch;
+				INFOPLIST_FILE = "HalvinBensa-Info.plist";
+				PRODUCT_NAME = HalvinBensa;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = /Users/larkki/Documents/xcode_workspace/HalvinBensa;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.1;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "HalvinBensa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "HalvinBensa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
