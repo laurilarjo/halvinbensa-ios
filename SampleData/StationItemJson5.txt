@@ -1,0 +1,23 @@
+{
+	"uid" : "5",
+	"title" : "Shell, Leppävaara",
+	"city" : "Espoo",
+	"address" : "Vanha maantie 2",
+	"company" : "Shell",
+	"latitude" : "60.220",
+	"longitude" : "24.811",
+	"prices" : [
+		{ "stationId" : "5",
+		"type" : "95E",
+		"date" : "2010-10-14T22:47:35.000+0300",
+		"price" : "1.404" },
+		{ "stationId" : "5",
+		"type" : "98E",
+		"date" : "2010-10-14T22:47:35.000+0300",
+		"price" : "1.494" },
+		{ "stationId" : "5",
+		"type" : "Diesel",
+		"date" : "2010-10-14T22:47:35.000+0300",
+		"price" : "1.134" }
+	]
+}
