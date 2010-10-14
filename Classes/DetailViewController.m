@@ -7,8 +7,6 @@
 //
 
 #import "DetailViewController.h"
-#import "UpdatePriceViewController.h"
-#import "Debug.h"
 
 @implementation DetailViewController
 
@@ -35,10 +33,23 @@
 {
 	if (sender == change95EButton)
 	{
-		//TODO: jatka tästä
-		//self.updatePriceViewController.currentPrice = 
+		self.updatePriceViewController.currentPriceItem = 
+			[currentStation.prices objectAtIndex:Price95E];
 		CMLog(@"95E UpdatePrice->");	
 	}
+	if (sender == change98EButton)
+	{
+		self.updatePriceViewController.currentPriceItem = 
+		[currentStation.prices objectAtIndex:Price98E];
+		CMLog(@"98E UpdatePrice->");	
+	}
+	if (sender == changeDieselButton)
+	{
+		self.updatePriceViewController.currentPriceItem = 
+		[currentStation.prices objectAtIndex:PriceDiesel];
+		CMLog(@"Diesel UpdatePrice->");	
+	}
+	
 	[self.navigationController pushViewController:self.updatePriceViewController animated:YES];
 	
 }

@@ -7,15 +7,20 @@
 //
 
 #import "UpdatePriceViewController.h"
-#import	"Debug.h"
 
 @implementation UpdatePriceViewController
 
-@synthesize euroPickerView, centPickerView;
+@synthesize euroPickerView, centPickerView, currentPriceItem;
 
 -(IBAction)accept:(UIButton *)sender
 {
-	CMLog(@"accepted");
+	NSInteger value1 = [euroPickerView selectedRowInComponent:0];
+	NSInteger value2 = [centPickerView selectedRowInComponent:0];
+	NSInteger value3 = [centPickerView selectedRowInComponent:1];
+	NSInteger value4 = [centPickerView selectedRowInComponent:2];
+	NSString *string = [NSString stringWithFormat:@"%d.%d%d%d", 
+						value1, value2, value3, value4];
+	CMLog(@"Accepted new price: %@", string);
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -57,6 +62,34 @@
 {
 	self.euroPickerView = nil;
 	self.centPickerView = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	double dvalue = [[currentPriceItem price] doubleValue];
+	if (dvalue > 10)
+	{
+		CMLog(@"PRICE WAS OVER 10!!");
+		return;
+	}
+	
+	//string on muotoa 1.423
+	NSString *string = [NSString stringWithFormat:@"%.3f", dvalue];
+	
+	//asetetaan vanha hintateksti
+	oldPriceLabel.text = string;
+	
+	NSString *value1 = [NSString stringWithFormat:@"%c", [string characterAtIndex:0]];
+	NSString *value2 = [NSString stringWithFormat:@"%c", [string characterAtIndex:2]];
+	NSString *value3 = [NSString stringWithFormat:@"%c", [string characterAtIndex:3]];
+	NSString *value4 = [NSString stringWithFormat:@"%c", [string characterAtIndex:4]];
+	
+	//asetetaan rullat valitun hinnan arvoihin
+	[euroPickerView selectRow:[value1 intValue] inComponent:0 animated:NO];
+	[centPickerView selectRow:[value2 intValue] inComponent:0 animated:NO];
+	[centPickerView selectRow:[value3 intValue] inComponent:1 animated:NO];
+	[centPickerView selectRow:[value4 intValue] inComponent:2 animated:NO];
+	
 }
 
 - (void)dealloc

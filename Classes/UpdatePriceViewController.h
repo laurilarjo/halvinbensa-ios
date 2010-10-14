@@ -8,15 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "PriceItem.h"
+#import	"Debug.h"
 
 @interface UpdatePriceViewController : UIViewController {
 	
+	IBOutlet UILabel *oldPriceLabel;
 	IBOutlet UIPickerView *euroPickerView;
 	IBOutlet UIPickerView *centPickerView;
+	PriceItem *currentPriceItem;
 }
 
 @property (nonatomic, retain) UIPickerView *euroPickerView;
 @property (nonatomic, retain) UIPickerView *centPickerView;
+@property (nonatomic, retain) PriceItem *currentPriceItem;
 
 -(IBAction)accept:(UIButton *)sender;
 

@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "StationItem.h"
 #import "PriceItem.h"
+#import "UpdatePriceViewController.h"
+#import "Debug.h"
 
 @class UpdatePriceViewController;
 
