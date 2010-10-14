@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 #import "StationItem.h"
+#import	"PriceItem.h"
+#import	"Debug.h"
 
 @interface StationAnnotation : NSObject <MKAnnotation> 
 {

@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "StationItem.h"
+#import "PriceItem.h"
+#import	"Debug.h"
+#import "JSON.h"
 
 @interface FileReaderHelper : NSObject {
 

@@ -7,11 +7,6 @@
 //
 
 #import "RootViewController.h"
-#import "StationAnnotation.h"
-#import "DetailViewController.h"
-#import "StationItem.h"
-#import "Debug.h"
-
 
 
 @implementation RootViewController
@@ -34,6 +29,12 @@
 
 #pragma mark -
 #pragma mark MKMapViewDelegate
+
+
+- (void)mapView:(MKMapView *)map regionWillChangeAnimated:(BOOL)animated
+{
+	//myös tämmönen on käytössä..
+}
 
 - (void)mapView:(MKMapView *)map regionDidChangeAnimated:(BOOL)animated
 {

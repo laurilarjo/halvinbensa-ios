@@ -13,19 +13,33 @@
 @synthesize updatePriceViewController, currentStation;
 
 
+- (double)priceOfIndex:(NSInteger)index
+{
+	if (index >= 0 && index < [currentStation.prices count]) {
+		return [[[currentStation.prices objectAtIndex:index] price] doubleValue];
+	}
+	
+	CMLog(@"ERROR: index out of bounds: %d", index);
+	return 0;
+	
+}
+
 - (void)confirmPrice:(UIButton *)sender
 {
 	if (sender == confirm95EButton)
 	{
-		CMLog(@"95E confirmed");
+		double value = [self priceOfIndex:Price95E];
+		CMLog(@"95E confirmed: %.3f", value);
 	}
 	if (sender == confirm98EButton)
 	{
-		CMLog(@"98E confirmed");
+		double value = [self priceOfIndex:Price98E];
+		CMLog(@"98E confirmed: %.3f", value);
 	}
 	if (sender == confirmDieselButton)
 	{
-		CMLog(@"Diesel confirmed");
+		double value = [self priceOfIndex:PriceDiesel];
+		CMLog(@"Diesel confirmed: %.3f", value);
 	}
 }
 
@@ -58,19 +72,16 @@
 
 - (void)viewDidLoad
 {
-	[super viewDidLoad];		
-	CMLog(@"didLoad");
+	[super viewDidLoad];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-	CMLog(@"didAppear");
 	
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-	CMLog(@"willAppear");
 	titleLabel.text = currentStation.title;
 	addressLabel.text = currentStation.address;
 	price95ELabel.text = [NSString stringWithFormat:@"%.3f", 

@@ -69,7 +69,7 @@
 	double dvalue = [[currentPriceItem price] doubleValue];
 	if (dvalue > 10)
 	{
-		CMLog(@"PRICE WAS OVER 10!!");
+		CMLog(@"ERROR: price was over 10!");
 		return;
 	}
 	

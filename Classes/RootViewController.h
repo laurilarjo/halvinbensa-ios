@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "StationServer.h"
+#import "StationAnnotation.h"
+#import "DetailViewController.h"
+#import "StationItem.h"
+#import "Debug.h"
 
 @class DetailViewController;
 

@@ -21,6 +21,8 @@
 		FA3DADB91267918900D1BA17 /* StationItemJson3.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA3DADB41267918900D1BA17 /* StationItemJson3.txt */; };
 		FA3DADBA1267918900D1BA17 /* StationItemJson4.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA3DADB51267918900D1BA17 /* StationItemJson4.txt */; };
 		FA3DADBC126791BB00D1BA17 /* StationItemJson5.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA3DADBB126791BB00D1BA17 /* StationItemJson5.txt */; };
+		FA3DAE421267AF1F00D1BA17 /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3DAE411267AF1F00D1BA17 /* whiteButton.png */; };
+		FA3DAEA51267B7BC00D1BA17 /* TodoList.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA3DAEA41267B7BC00D1BA17 /* TodoList.txt */; };
 		FA5F68E0126640AC00A332F1 /* FileReaderHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F68DF126640AC00A332F1 /* FileReaderHelper.m */; };
 		FA5F6A2B1266660500A332F1 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F6A221266660500A332F1 /* NSObject+SBJSON.m */; };
 		FA5F6A2C1266660500A332F1 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F6A241266660500A332F1 /* NSString+SBJSON.m */; };
@@ -63,6 +65,8 @@
 		FA3DADB41267918900D1BA17 /* StationItemJson3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StationItemJson3.txt; sourceTree = "<group>"; };
 		FA3DADB51267918900D1BA17 /* StationItemJson4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StationItemJson4.txt; sourceTree = "<group>"; };
 		FA3DADBB126791BB00D1BA17 /* StationItemJson5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StationItemJson5.txt; sourceTree = "<group>"; };
+		FA3DAE411267AF1F00D1BA17 /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteButton.png; path = images/whiteButton.png; sourceTree = "<group>"; };
+		FA3DAEA41267B7BC00D1BA17 /* TodoList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TodoList.txt; sourceTree = "<group>"; };
 		FA5F68DE126640AC00A332F1 /* FileReaderHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileReaderHelper.h; sourceTree = "<group>"; };
 		FA5F68DF126640AC00A332F1 /* FileReaderHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileReaderHelper.m; sourceTree = "<group>"; };
 		FA5F68E71266411900A332F1 /* Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug.h; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 			children = (
 				28A0AAE50D9B0CCF005BE974 /* HalvinBensa_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				FA3DAEA41267B7BC00D1BA17 /* TodoList.txt */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -175,10 +180,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FAE3B9691265FC7D003AD43C /* check.png */,
-				FAE3B96A1265FC7D003AD43C /* close.png */,
-				FAE3B9651265F5D8003AD43C /* light_grey_bg.jpg */,
-				FAE3B90E1265E7C7003AD43C /* mesh_grey_bg.jpg */,
+				FA3DAE431267AF2D00D1BA17 /* images */,
 				8D1107310486CEB800E47090 /* HalvinBensa-Info.plist */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
@@ -211,6 +213,18 @@
 				FA3DADBB126791BB00D1BA17 /* StationItemJson5.txt */,
 			);
 			path = SampleData;
+			sourceTree = "<group>";
+		};
+		FA3DAE431267AF2D00D1BA17 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				FA3DAE411267AF1F00D1BA17 /* whiteButton.png */,
+				FAE3B9691265FC7D003AD43C /* check.png */,
+				FAE3B96A1265FC7D003AD43C /* close.png */,
+				FAE3B9651265F5D8003AD43C /* light_grey_bg.jpg */,
+				FAE3B90E1265E7C7003AD43C /* mesh_grey_bg.jpg */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		FA5F6A1F1266660500A332F1 /* JSON */ = {
@@ -295,6 +309,8 @@
 				FA3DADB91267918900D1BA17 /* StationItemJson3.txt in Resources */,
 				FA3DADBA1267918900D1BA17 /* StationItemJson4.txt in Resources */,
 				FA3DADBC126791BB00D1BA17 /* StationItemJson5.txt in Resources */,
+				FA3DAE421267AF1F00D1BA17 /* whiteButton.png in Resources */,
+				FA3DAEA51267B7BC00D1BA17 /* TodoList.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

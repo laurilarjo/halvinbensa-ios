@@ -1,0 +1,11 @@
+Calculating route distance:
+http://stackoverflow.com/questions/2673439/calculation-route-length
+
+Seuraavaksi:
+- tee kunnon nappula jolla on taustakuva, ainakin Hyväksy-nappi
+- toteuta refresh
+- laske servulta saatujen asemien halvimmat hinnat ja näytä ne vihreällä nupilla
+- laske lähimmän (lähimpien) asemien sijainnit ja näytä vain ne kartalla
+- laske optimin asemien sijainnit ja näytä vain ne kartalla
+- näytä käyttäjän reitti kartalla valitulla tavalla (lähin, halvin, optimi)
+- webservice juttua..
