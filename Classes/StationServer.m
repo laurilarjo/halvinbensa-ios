@@ -8,12 +8,10 @@
 
 #import "StationServer.h"
 
-
-
-
 @implementation StationServer
 
 @synthesize stationArray;
+
 
 - (NSArray *)stationsForMapRegion:(MKCoordinateRegion)region ofType:(NSInteger)type
 {
