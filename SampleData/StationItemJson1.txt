@@ -1,0 +1,23 @@
+{
+	"uid" : "1",
+	"title" : "Hesan asema",
+	"city" : "Helsinki",
+	"address" : "Mikälie tie 23 C",
+	"company" : "Shell",	
+	"latitude" : "60.177",
+	"longitude" : "24.938",
+	"prices" : [
+		{ "stationId" : "1",
+		"type" : "95E",
+		"date" : "2010-10-12T22:47:35.000+0300",
+		"price" : "1.431" },
+		{ "stationId" : "1",
+		"type" : "98E",
+		"date" : "2010-10-12T22:47:35.000+0300",
+		"price" : "1.555" },
+		{ "stationId" : "1",
+		"type" : "Diesel",
+		"date" : "2010-10-12T22:47:35.000+0300",
+		"price" : "1.166" }
+	]
+}

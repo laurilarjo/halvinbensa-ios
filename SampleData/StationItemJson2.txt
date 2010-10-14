@@ -1,0 +1,23 @@
+{
+	"uid" : "2",
+	"title" : "Espoon asema",
+	"city" : "Espoo",
+	"address" : "Toinen katu 2",
+	"company" : "Teboil",	
+	"latitude" : "60.215",
+	"longitude" : "24.658",
+	"prices" : [
+		{ "stationId" : "2",
+		"type" : "95E",
+		"date" : "2010-10-12T22:47:35.000+0300",
+		"price" : "1.331" },
+		{ "stationId" : "2",
+		"type" : "98E",
+		"date" : "2010-10-12T22:47:35.000+0300",
+		"price" : "1.444" },
+		{ "stationId" : "2",
+		"type" : "Diesel",
+		"date" : "2010-10-12T22:47:35.000+0300",
+		"price" : "1.111" }
+	]
+}

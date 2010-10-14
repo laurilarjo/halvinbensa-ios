@@ -1,0 +1,23 @@
+{
+	"uid" : "3",
+	"title" : "Lappeen ranta",
+	"city" : "Lappeenranta",
+	"address" : "Toinen katu 2",
+	"company" : "Neste Oil",
+	"latitude" : "61.05",
+	"longitude" : "28.18",
+	"prices" : [
+		{ "stationId" : "3",
+		"type" : "95E",
+		"date" : "2010-10-12T22:47:35.000+0300",
+		"price" : "1.222" },
+		{ "stationId" : "3",
+		"type" : "98E",
+		"date" : "2010-10-12T22:47:35.000+0300",
+		"price" : "1.333" },
+		{ "stationId" : "3",
+		"type" : "Diesel",
+		"date" : "2010-10-12T22:47:35.000+0300",
+		"price" : "1.000" }
+	]
+}
