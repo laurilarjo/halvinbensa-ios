@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "DetailViewController.h"
 #import "PriceItem.h"
+#import	"UICreator.h"
 #import	"Debug.h"
 
 @interface UpdatePriceViewController : UIViewController {
 	
+	IBOutlet UIButton *acceptButton;
 	IBOutlet UILabel *oldPriceLabel;
 	IBOutlet UIPickerView *euroPickerView;
 	IBOutlet UIPickerView *centPickerView;

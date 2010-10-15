@@ -2,10 +2,17 @@ Calculating route distance:
 http://stackoverflow.com/questions/2673439/calculation-route-length
 
 Seuraavaksi:
-- tee kunnon nappula jolla on taustakuva, ainakin Hyväksy-nappi
-- toteuta refresh
+DONE: tee kunnon nappula jolla on taustakuva, ainakin Hyväksy-nappi
+- kun hinta on päivitetty, poista check ja ruksi, korvaa "päivitetty"-tekstillä
 - laske servulta saatujen asemien halvimmat hinnat ja näytä ne vihreällä nupilla
 - laske lähimmän (lähimpien) asemien sijainnit ja näytä vain ne kartalla
 - laske optimin asemien sijainnit ja näytä vain ne kartalla
 - näytä käyttäjän reitti kartalla valitulla tavalla (lähin, halvin, optimi)
+- toteuta refresh
 - webservice juttua..
+- kun hintaa päivitetään, näytä spinneri check ja ruksin kohdalla
+
+Mieti ja testaa keissit:
+- ei löydetty yhtään asemaa
+- asemalla ei myydä esim. 98E
+- tiettyä hintaa ei ole päivitetty viiteen päivään

@@ -11,6 +11,6 @@
 
 @implementation PriceItem
 
-@synthesize stationId, type, date, price;
+@synthesize stationId, type, date, price, uploaded;
 
 @end

@@ -11,6 +11,7 @@
 #import "StationItem.h"
 #import "PriceItem.h"
 #import "UpdatePriceViewController.h"
+#import	"UICreator.h"
 #import "Debug.h"
 
 @class UpdatePriceViewController;
@@ -26,6 +27,7 @@
 	IBOutlet UILabel *price98ELabel;
 	IBOutlet UILabel *priceDieselLabel;
 	IBOutlet UILabel *dateLabel;
+	IBOutlet UIButton *showRouteButton;
 	
 	IBOutlet UIButton *confirm95EButton;
 	IBOutlet UIButton *confirm98EButton;
@@ -33,11 +35,16 @@
 	IBOutlet UIButton *change95EButton;
 	IBOutlet UIButton *change98EButton;
 	IBOutlet UIButton *changeDieselButton;
+	
+	IBOutlet UILabel *updatedPrice95ELabel;
+	IBOutlet UILabel *updatedPrice98ELabel;
+	IBOutlet UILabel *updatedPriceDieselLabel;
 }
 
 @property (nonatomic, retain) IBOutlet UpdatePriceViewController *updatePriceViewController;
 @property (nonatomic, retain) StationItem *currentStation;
 - (IBAction)confirmPrice:(UIButton *)sender;
 - (IBAction)changePrice:(UIButton *)sender;
+- (IBAction)priceUploaded:(PriceItem *)item;
 
 @end

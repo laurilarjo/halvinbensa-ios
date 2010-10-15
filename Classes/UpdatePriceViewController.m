@@ -21,6 +21,13 @@
 	NSString *string = [NSString stringWithFormat:@"%d.%d%d%d", 
 						value1, value2, value3, value4];
 	CMLog(@"Accepted new price: %@", string);
+	
+	//TODO: käynnistä uploadaus
+	
+	//merkataan edelliseen controlleriin (detail), että tämä hinta on upattu
+	NSInteger count = [[self.navigationController viewControllers] count];
+	DetailViewController *previous = (DetailViewController *)[[self.navigationController viewControllers] objectAtIndex:count-2];
+	[previous priceUploaded:currentPriceItem];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -52,9 +59,17 @@
 
 #pragma mark ViewController stuff
 
+
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+	
+	//lisätään taustakuvat nappulalle, jota ei voi Interface Builderissa tehdä oikein
+	UIImage *buttonImage = [UICreator getButtonImage];
+	[acceptButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+	
+	UIImage *buttonPressedImage = [UICreator getButtonPressedImage];
+	[acceptButton setBackgroundImage:buttonPressedImage forState:UIControlStateHighlighted];
 	
 }
 

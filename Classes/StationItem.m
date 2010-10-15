@@ -26,14 +26,7 @@
 		[self setAddress:item.address];
 		[self setCity:item.city];
 		[self setPrices:item.prices];
-		/*
-		longitude = [item.longitude copy];
-		title = [item.title copy];
-		company = [item.company copy];
-		address = [item.address copy];
-		city = [item.city copy];
-		prices = [item.prices copy];
-		 */
+
 	}
 	return self;
 }
