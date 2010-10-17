@@ -32,5 +32,6 @@
 @property (nonatomic, readonly) NSString *subtitle;
 
 -(id)initWithItem:(StationItem *)item;
+-(double)priceOfType:(NSInteger)index;
 
 @end

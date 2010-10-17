@@ -1,0 +1,23 @@
+{
+	"uid" : "6",
+	"title" : "joku asema",
+	"city" : "Helsinki",
+	"address" : "Joku tie 23 C",
+	"company" : "Shell",	
+	"latitude" : "60.407",
+	"longitude" : "24.938",
+	"prices" : [
+		{ "stationId" : "6",
+		"type" : "95E",
+		"date" : "2010-10-12T22:47:35.000+0300",
+		"price" : "1.231" },
+		{ "stationId" : "6",
+		"type" : "98E",
+		"date" : "2010-10-12T22:47:35.000+0300",
+		"price" : "1.255" },
+		{ "stationId" : "6",
+		"type" : "Diesel",
+		"date" : "2010-10-12T22:47:35.000+0300",
+		"price" : "1.066" }
+	]
+}

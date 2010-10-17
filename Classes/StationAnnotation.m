@@ -48,6 +48,12 @@
 	return result;
 }
 
+- (double)priceOfType:(NSInteger)index
+{
+	double result = [[[dataItem.prices objectAtIndex:index] price] doubleValue];
+	return result;
+}
+
 - (id)init
 {	
 	if (self = [super init])

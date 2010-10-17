@@ -3,12 +3,15 @@ http://stackoverflow.com/questions/2673439/calculation-route-length
 
 Seuraavaksi:
 DONE: tee kunnon nappula jolla on taustakuva, ainakin Hyväksy-nappi
-- kun hinta on päivitetty, poista check ja ruksi, korvaa "päivitetty"-tekstillä
-- laske servulta saatujen asemien halvimmat hinnat ja näytä ne vihreällä nupilla
-- laske lähimmän (lähimpien) asemien sijainnit ja näytä vain ne kartalla
-- laske optimin asemien sijainnit ja näytä vain ne kartalla
+DONE: kun hinta on päivitetty, poista check ja ruksi, korvaa "päivitetty"-tekstillä
+DONE: laske servulta saatujen asemien halvimmat/neutraalit ja kalliit hinnat
+DONE: näytä halvimmat vihreällä nupilla, neutraalit purplella, kalliit punaisella
 - näytä käyttäjän reitti kartalla valitulla tavalla (lähin, halvin, optimi)
+- lisää options-sivu, jos mahdollista niin google map-tyyliin
+- options-sivulle mahdollisuus ruksia mitkä bensojen hinnat haluaa näyttää
 - toteuta refresh
+- laske lähimmän (lähimpien) asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella
+- laske optimin asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella
 - webservice juttua..
 - kun hintaa päivitetään, näytä spinneri check ja ruksin kohdalla
 

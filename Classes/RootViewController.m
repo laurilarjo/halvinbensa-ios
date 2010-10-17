@@ -25,6 +25,40 @@
     [self.mapView setRegion:newRegion animated:YES];
 }
 
+/**
+Hintahaarukasta 25% halpoja, 50% neutraaleja, 25% kalliita. 
+ 
+Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
+*/
+- (double)priceLevelForItem:(StationAnnotation *)annotation forType:(NSInteger)index
+{
+	double cheapest = 99;
+	double mostExpensive = 0;
+	
+	//ensin etsitään kallein ja halvin
+	for (StationAnnotation *item in mapView.annotations) {
+		double price = [item priceOfType:index];
+		if (price < cheapest) {
+			cheapest = price;
+		}
+		if (price > mostExpensive)
+			mostExpensive = price;
+	}
+	CMLog(@"cheapest: %f, mostExpensive: %f", cheapest, mostExpensive);
+	//lasketaan halvimman ja kalleimman rajat
+	double priceGap = mostExpensive - cheapest;
+	double quarter = priceGap * 0.025;
+	double cheapLimit = cheapest + quarter;
+	double expensiveLimit = mostExpensive - quarter;
+	
+	//palautetaan tulos
+	if ([annotation priceOfType:index] < cheapLimit)
+		return -1;
+	if ([annotation priceOfType:index] > expensiveLimit)
+		return +1;
+	return 0;
+	
+}
 
 
 #pragma mark -
@@ -83,7 +117,20 @@
 	{
 		customPinView = [[[MKPinAnnotationView alloc]  initWithAnnotation:annotation reuseIdentifier:annotationID] autorelease];
 	}
-	customPinView.pinColor = MKPinAnnotationColorRed;
+	//laitetaan hinnan mukaiset värit pinneille
+	double priceLevel = [self priceLevelForItem:annotation forType:Price95E];
+	if (priceLevel < 0) {
+		customPinView.pinColor = MKPinAnnotationColorGreen;
+	}
+	else if (priceLevel > 0) {
+		customPinView.pinColor = MKPinAnnotationColorRed;
+	}
+	else {
+		customPinView.pinColor = MKPinAnnotationColorPurple;
+	}
+
+
+	
 	customPinView.animatesDrop = NO;
 	customPinView.canShowCallout = YES;
 	

@@ -21,14 +21,22 @@
 	
 	NSError *fileError;
 	NSString *contents;
+	//luetaan tiedostot applikaation omasta documents-kansiosta
 	NSArray *files = [fileManager contentsOfDirectoryAtPath:documentsDirectory error:&fileError];
-	for (NSString *file in files) {		
+	for (NSString *file in files) {
 		NSString *filePath = [documentsDirectory stringByAppendingPathComponent:file];
 		CMLog(@"filePath: %@", filePath);
 		contents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&fileError];
 		
 		//JSON parsiminen
 		CMLog(@"parsing JSON: %@", contents);
+		
+		if (contents == nil)
+		{
+			CMLog(@"Error in file, skipping...");
+			continue;
+		}
+		
 		NSDictionary *dic = [contents JSONValue];
 		
 		//muunnetaan StationItem
@@ -56,6 +64,7 @@
 		
 		[formatter release];
 		[item release];
+		
 	}	
 
 	return stations;

@@ -15,6 +15,7 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		FA1CF7FC126B75A900CC2237 /* StationItemJson6.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA1CF7FB126B75A900CC2237 /* StationItemJson6.txt */; };
 		FA3DADB61267918900D1BA17 /* PriceItemJson1.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA3DADB11267918900D1BA17 /* PriceItemJson1.txt */; };
 		FA3DADB71267918900D1BA17 /* StationItemJson1.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA3DADB21267918900D1BA17 /* StationItemJson1.txt */; };
 		FA3DADB81267918900D1BA17 /* StationItemJson2.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA3DADB31267918900D1BA17 /* StationItemJson2.txt */; };
@@ -61,6 +62,7 @@
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* HalvinBensa-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HalvinBensa-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		FA1CF7FB126B75A900CC2237 /* StationItemJson6.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StationItemJson6.txt; sourceTree = "<group>"; };
 		FA3DADB11267918900D1BA17 /* PriceItemJson1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PriceItemJson1.txt; sourceTree = "<group>"; };
 		FA3DADB21267918900D1BA17 /* StationItemJson1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StationItemJson1.txt; sourceTree = "<group>"; };
 		FA3DADB31267918900D1BA17 /* StationItemJson2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StationItemJson2.txt; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				FA3DADB41267918900D1BA17 /* StationItemJson3.txt */,
 				FA3DADB51267918900D1BA17 /* StationItemJson4.txt */,
 				FA3DADBB126791BB00D1BA17 /* StationItemJson5.txt */,
+				FA1CF7FB126B75A900CC2237 /* StationItemJson6.txt */,
 			);
 			path = SampleData;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				FA3DAE421267AF1F00D1BA17 /* whiteButton.png in Resources */,
 				FA3DAEA51267B7BC00D1BA17 /* TodoList.txt in Resources */,
 				FA886E431268DE450090C428 /* blueButton.png in Resources */,
+				FA1CF7FC126B75A900CC2237 /* StationItemJson6.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
