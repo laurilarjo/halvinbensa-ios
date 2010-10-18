@@ -11,7 +11,8 @@
 
 @implementation RootViewController
 
-@synthesize mapView, mapAnnotations, detailViewController;
+@synthesize mapView, mapAnnotations, 
+	detailViewController, optionsViewController;
 
 
 - (void)gotoStartLocation
@@ -26,8 +27,7 @@
 }
 
 /**
-Hintahaarukasta 25% halpoja, 50% neutraaleja, 25% kalliita. 
- 
+Hintahaarukasta 25% halpoja, 50% neutraaleja, 25% kalliita.  
 Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 */
 - (double)priceLevelForItem:(StationAnnotation *)annotation forType:(NSInteger)index
@@ -60,6 +60,15 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 	
 }
 
+-(IBAction)showOptionsPage
+{
+	CMLog(@"showOptions");
+	self.optionsViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+	self.optionsViewController.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+	
+	[self.navigationController presentModalViewController:optionsViewController animated:YES];
+	 
+}
 
 #pragma mark -
 #pragma mark MKMapViewDelegate

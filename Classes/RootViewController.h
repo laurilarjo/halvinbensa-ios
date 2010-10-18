@@ -11,6 +11,7 @@
 #import "StationServer.h"
 #import "StationAnnotation.h"
 #import "DetailViewController.h"
+#import "OptionsViewController.h"
 #import "StationItem.h"
 #import "Debug.h"
 
@@ -20,12 +21,16 @@
 {
 	MKMapView *mapView;
 	DetailViewController *detailViewController;
+	OptionsViewController *optionsViewController;
 	NSMutableArray *mapAnnotations;
 	StationServer *stationServer;
 }
 
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+@property (nonatomic, retain) IBOutlet OptionsViewController *optionsViewController;
 @property (nonatomic, retain) NSMutableArray *mapAnnotations;
+
+-(IBAction)showOptionsPage;
 
 @end

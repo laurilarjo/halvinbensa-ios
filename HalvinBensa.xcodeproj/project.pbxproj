@@ -15,6 +15,8 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		FA01C8B6126CC774008F1411 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01C8B5126CC774008F1411 /* OptionsViewController.m */; };
+		FA01C8B8126CC824008F1411 /* OptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA01C8B7126CC824008F1411 /* OptionsViewController.xib */; };
 		FA1CF7FC126B75A900CC2237 /* StationItemJson6.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA1CF7FB126B75A900CC2237 /* StationItemJson6.txt */; };
 		FA3DADB61267918900D1BA17 /* PriceItemJson1.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA3DADB11267918900D1BA17 /* PriceItemJson1.txt */; };
 		FA3DADB71267918900D1BA17 /* StationItemJson1.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA3DADB21267918900D1BA17 /* StationItemJson1.txt */; };
@@ -62,6 +64,9 @@
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* HalvinBensa-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HalvinBensa-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		FA01C8B4126CC774008F1411 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		FA01C8B5126CC774008F1411 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
+		FA01C8B7126CC824008F1411 /* OptionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsViewController.xib; sourceTree = "<group>"; };
 		FA1CF7FB126B75A900CC2237 /* StationItemJson6.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StationItemJson6.txt; sourceTree = "<group>"; };
 		FA3DADB11267918900D1BA17 /* PriceItemJson1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PriceItemJson1.txt; sourceTree = "<group>"; };
 		FA3DADB21267918900D1BA17 /* StationItemJson1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StationItemJson1.txt; sourceTree = "<group>"; };
@@ -139,6 +144,8 @@
 				FAC0C8111264F99000BF955A /* DetailViewController.m */,
 				FAE3B97312660A14003AD43C /* UpdatePriceViewController.h */,
 				FAE3B97412660A14003AD43C /* UpdatePriceViewController.m */,
+				FA01C8B4126CC774008F1411 /* OptionsViewController.h */,
+				FA01C8B5126CC774008F1411 /* OptionsViewController.m */,
 				FAC0CA07126513F500BF955A /* StationServer.h */,
 				FAC0CA08126513F500BF955A /* StationServer.m */,
 				FAC0C7B51264EDAD00BF955A /* StationAnnotation.h */,
@@ -195,6 +202,7 @@
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				FAC0C8131264FA0C00BF955A /* DetailViewController.xib */,
 				FAE3B99D12660DE7003AD43C /* UpdatePriceViewController.xib */,
+				FA01C8B7126CC824008F1411 /* OptionsViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 				FA3DAEA51267B7BC00D1BA17 /* TodoList.txt in Resources */,
 				FA886E431268DE450090C428 /* blueButton.png in Resources */,
 				FA1CF7FC126B75A900CC2237 /* StationItemJson6.txt in Resources */,
+				FA01C8B8126CC824008F1411 /* OptionsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +359,7 @@
 				FA5F6A2F1266660500A332F1 /* SBJsonWriter.m in Sources */,
 				FA5F6D3D1267699D00A332F1 /* PriceItem.m in Sources */,
 				FA6A00C61268E71F00E89EF4 /* UICreator.m in Sources */,
+				FA01C8B6126CC774008F1411 /* OptionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

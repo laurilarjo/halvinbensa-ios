@@ -6,8 +6,9 @@ DONE: tee kunnon nappula jolla on taustakuva, ainakin Hyväksy-nappi
 DONE: kun hinta on päivitetty, poista check ja ruksi, korvaa "päivitetty"-tekstillä
 DONE: laske servulta saatujen asemien halvimmat/neutraalit ja kalliit hinnat
 DONE: näytä halvimmat vihreällä nupilla, neutraalit purplella, kalliit punaisella
-- näytä käyttäjän reitti kartalla valitulla tavalla (lähin, halvin, optimi)
-- lisää options-sivu, jos mahdollista niin google map-tyyliin
+EI ONNISTU: näytä käyttäjän reitti kartalla valitulla tavalla (lähin, halvin, optimi).
+DONE: lisää options-sivu, jos mahdollista niin google maps-tyyliin. 
+- options siirtymään vielä säätöä, jotta alapalkin saa pysymään paikallaan.
 - options-sivulle mahdollisuus ruksia mitkä bensojen hinnat haluaa näyttää
 - toteuta refresh
 - laske lähimmän (lähimpien) asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella
