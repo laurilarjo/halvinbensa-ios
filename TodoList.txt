@@ -8,9 +8,9 @@ DONE: laske servulta saatujen asemien halvimmat/neutraalit ja kalliit hinnat
 DONE: näytä halvimmat vihreällä nupilla, neutraalit purplella, kalliit punaisella
 EI ONNISTU: näytä käyttäjän reitti kartalla valitulla tavalla (lähin, halvin, optimi).
 DONE: lisää options-sivu, jos mahdollista niin google maps-tyyliin. 
-- options siirtymään vielä säätöä, jotta alapalkin saa pysymään paikallaan.
-- options-sivulle mahdollisuus ruksia mitkä bensojen hinnat haluaa näyttää
-- toteuta refresh
+DONE (ei onnistunut kunnolla): options siirtymään vielä säätöä, jotta alapalkin saa pysymään paikallaan.
+DONE: options-sivulle mahdollisuus ruksia mitkä bensojen hinnat haluaa näyttää
+DONE: toteuta refresh
 - laske lähimmän (lähimpien) asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella
 - laske optimin asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella
 - webservice juttua..

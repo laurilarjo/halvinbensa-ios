@@ -94,8 +94,12 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 {
 	NSInteger selected = segmentControl.selectedSegmentIndex;
 	CMLog(@"segment selected: %d", selected);
-	[Engine sharedInstance].selectedSegment = selected;
-	
+	[Engine sharedInstance].selectedSegment = selected;	
+}
+
+- (IBAction)refreshMap
+{
+	[mapView.delegate mapView:mapView regionDidChangeAnimated:YES];	 
 }
 
 #pragma mark -

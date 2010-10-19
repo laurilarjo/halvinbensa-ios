@@ -35,7 +35,8 @@
 @property (nonatomic, retain) NSMutableArray *mapAnnotations;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *segmentControl;
 
--(IBAction)showOptionsPage;
--(IBAction)segmentChanged;
+- (IBAction)showOptionsPage;
+- (IBAction)segmentChanged;
+- (IBAction)refreshMap;
 
 @end
