@@ -62,13 +62,20 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 	
 }
 
+//
 - (NSArray *)filterStationsByType:(NSArray *)stations
 {
 	NSMutableArray *result = [NSMutableArray arrayWithCapacity:10];
+	NSInteger selectedFuelType = [Engine sharedInstance].selectedFuelType;
 	
 	for (StationAnnotation *annotation in stations) {
-		//
+		if ([annotation priceOfType:selectedFuelType] > 0) {
+			[result addObject:annotation];
+		}
 	}
+	CMLog(@"stations filtered using fuelType: %d", selectedFuelType);
+	
+	return result;
 }
 
 #pragma mark IBActionit	
@@ -102,9 +109,13 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 
 - (void)mapView:(MKMapView *)map regionDidChangeAnimated:(BOOL)animated
 {
+	//hae kartalla näkyvät asemat
 	NSArray *items = [stationServer stationsForMapRegion:mapView.region];
 	
+	//filtteröi pois asemat, joilla ei ole käytetyn bensan hintatietoa
+	items = [self filterStationsByType:items];
 	
+	//vaihdetaan uudet asemat vanhojen tilalle
     NSArray *oldAnnotations = mapView.annotations;
     [mapView removeAnnotations:oldAnnotations];	    
 	[mapView addAnnotations:items];
@@ -148,7 +159,7 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 		customPinView = [[[MKPinAnnotationView alloc]  initWithAnnotation:annotation reuseIdentifier:annotationID] autorelease];
 	}
 	//laitetaan hinnan mukaiset värit pinneille
-	double priceLevel = [self priceLevelForItem:annotation forType:Price95E];
+	double priceLevel = [self priceLevelForItem:annotation forType:[Engine sharedInstance].selectedFuelType];
 	if (priceLevel < 0) {
 		customPinView.pinColor = MKPinAnnotationColorGreen;
 	}
@@ -213,9 +224,11 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
  }
  */
 
+/*
 - (void)viewDidAppear:(BOOL)animated 
 {	
 }
+*/
 
 /*
  - (void)viewWillDisappear:(BOOL)animated {

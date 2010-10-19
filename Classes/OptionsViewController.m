@@ -26,21 +26,14 @@
 }
 
 //päivitetään enginen arvot kohdalleen
-- (IBAction)showPriceChanged:(UISwitch *)sender
+- (IBAction)fuelTypeChanged:(UISegmentedControl *)sender
 {
-	if (sender == show95EPriceSwitch)
+	if (sender == selectedFuelTypeControl)
 	{
-		[Engine sharedInstance].show95EPrice = show95EPriceSwitch.on;
-	}
-	else if (sender == show98EPriceSwitch)
-	{
-		[Engine sharedInstance].show98EPrice = show98EPriceSwitch.on;
-	}
-	else if (sender == showDieselPriceSwitch)
-	{
-		[Engine sharedInstance].showDieselPrice = showDieselPriceSwitch.on;
+		[Engine sharedInstance].selectedFuelType = selectedFuelTypeControl.selectedSegmentIndex;
 	}
 }
+	
 
 - (void)viewDidLoad
 {

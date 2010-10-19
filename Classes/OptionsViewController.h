@@ -13,12 +13,10 @@
 @interface OptionsViewController : UIViewController {
 
 	IBOutlet UIBarButtonItem *showOptionsButton;
-	IBOutlet UISwitch *show95EPriceSwitch;
-	IBOutlet UISwitch *show98EPriceSwitch;
-	IBOutlet UISwitch *showDieselPriceSwitch;
+	IBOutlet UISegmentedControl *selectedFuelTypeControl;
 	IBOutlet UISegmentedControl *segmentControl;
 }
 
 - (IBAction)backToPreviousView;
-- (IBAction)showPriceChanged:(UISwitch *)sender;
+- (IBAction)fuelTypeChanged:(UISegmentedControl *)sender;
 @end

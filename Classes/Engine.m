@@ -11,8 +11,7 @@
 
 @implementation Engine
 
-@synthesize selectedSegment, show95EPrice, 
-	show98EPrice, showDieselPrice;
+@synthesize selectedSegment, selectedFuelType;
 
 static Engine *sharedEngine = nil;
 

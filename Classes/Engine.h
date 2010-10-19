@@ -12,16 +12,12 @@
 @interface Engine : NSObject {
 	
 	NSInteger selectedSegment;
-	bool show95EPrice;
-	bool show98EPrice;
-	bool showDieselPrice;
+	NSInteger selectedFuelType; //sama numerointi kuin enum Price95E = 0, jne..
 
 }
 
 @property (nonatomic) NSInteger selectedSegment;
-@property (nonatomic) bool show95EPrice;
-@property (nonatomic) bool show98EPrice;
-@property (nonatomic) bool showDieselPrice;
+@property (nonatomic) NSInteger selectedFuelType;
 
 + (Engine *) sharedInstance;
 
