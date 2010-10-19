@@ -19,6 +19,7 @@
 	NSString *longitude;
 	NSString *title;
 	NSString *subtitle;
+	NSNumber *distanceToUser;
 	
 	CLLocationCoordinate2D coordinate;
 	
@@ -30,6 +31,7 @@
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSString *subtitle;
+@property (nonatomic, retain) NSNumber *distanceToUser;
 
 -(id)initWithItem:(StationItem *)item;
 -(double)priceOfType:(NSInteger)index;

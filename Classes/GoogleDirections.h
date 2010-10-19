@@ -10,12 +10,14 @@
 #import <CoreLocation/CoreLocation.h>
 #import "GDirectionItem.h"
 #include "TargetConditionals.h"
+#include "JSON.h"
+#import "Debug.h"
 
 
 @interface GoogleDirections : NSObject {
 
 }
 
-- (GDirectionItem *)findRouteFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination;
+- (NSNumber *)findRouteFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination;
 
 @end

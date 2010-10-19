@@ -1,6 +1,11 @@
 Calculating route distance:
 http://stackoverflow.com/questions/2673439/calculation-route-length
 
+JSON-parsinta:
+http://www.xprogress.com/post-44-how-to-parse-json-files-on-iphone-in-objective-c-into-nsarray-and-nsdictionary/
+http://mobile.tutsplus.com/tutorials/iphone/iphone-json-twitter-api/
+http://mobileorchard.com/tutorial-json-over-http-on-the-iphone/
+
 Seuraavaksi:
 DONE: tee kunnon nappula jolla on taustakuva, ainakin Hyväksy-nappi
 DONE: kun hinta on päivitetty, poista check ja ruksi, korvaa "päivitetty"-tekstillä
@@ -11,7 +16,7 @@ DONE: lisää options-sivu, jos mahdollista niin google maps-tyyliin.
 DONE (ei onnistunut kunnolla): options siirtymään vielä säätöä, jotta alapalkin saa pysymään paikallaan.
 DONE: options-sivulle mahdollisuus ruksia mitkä bensojen hinnat haluaa näyttää
 DONE: toteuta refresh
-- laske lähimmän (lähimpien) asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella
+DONE, mutta pitää parantaa: laske lähimmän (lähimpien) asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella
 - webservice juttua..
 - kun hintaa päivitetään, näytä spinneri check ja ruksin kohdalla
 - laske optimin asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella

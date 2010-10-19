@@ -62,6 +62,35 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 	
 }
 
+- (BOOL)closestStation:(StationAnnotation *)annotation
+{
+	for (StationAnnotation *item in [mapView annotations]) {
+		if (item.distanceToUser == nil)
+		{
+			CLLocationCoordinate2D origin = [[mapView userLocation] location].coordinate;
+			CLLocationCoordinate2D destination = item.coordinate;
+			NSNumber *distance = [googleDirections findRouteFrom:origin to:destination];
+			
+			item.distanceToUser = distance;
+			
+		}
+	}
+	StationAnnotation *closest = [[mapView annotations] objectAtIndex:0];
+	for (StationAnnotation *item in [mapView annotations]) {
+		if ([item.distanceToUser doubleValue] < [closest.distanceToUser doubleValue])
+		{
+			closest = item;
+		}
+	}
+	
+	if (closest == annotation) {
+		return YES;
+	}
+	else {
+		return NO;
+	}
+}
+
 //
 - (NSArray *)filterStationsByType:(NSArray *)stations
 {
@@ -95,12 +124,7 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 	NSInteger selected = segmentControl.selectedSegmentIndex;
 	CMLog(@"segment selected: %d", selected);
 	[Engine sharedInstance].selectedSegment = selected;
-	if (selected == 1) {
-		CLLocationCoordinate2D origin = [[mapView userLocation] location].coordinate;
-		StationAnnotation *annotation = [mapView.annotations objectAtIndex:0];
-		CLLocationCoordinate2D destination = annotation.coordinate;
-		GDirectionItem *item = [googleDirections findRouteFrom:origin to:destination];
-	}
+	
 }
 
 - (IBAction)refreshMap
@@ -166,21 +190,35 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 		(MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:annotationID];
 	if (customPinView == nil)
 	{
-		customPinView = [[[MKPinAnnotationView alloc]  initWithAnnotation:annotation reuseIdentifier:annotationID] autorelease];
+		customPinView = [[[MKPinAnnotationView alloc] 
+						  initWithAnnotation:annotation reuseIdentifier:annotationID] autorelease];
 	}
-	//laitetaan hinnan mukaiset värit pinneille
-	double priceLevel = [self priceLevelForItem:annotation forType:[Engine sharedInstance].selectedFuelType];
-	if (priceLevel < 0) {
-		customPinView.pinColor = MKPinAnnotationColorGreen;
+	
+	if ([Engine sharedInstance].selectedSegment == 0) //byPrice
+	{
+		//laitetaan hinnan mukaiset värit pinneille
+		double priceLevel = [self priceLevelForItem:annotation forType:[Engine sharedInstance].selectedFuelType];
+		if (priceLevel < 0) {
+			customPinView.pinColor = MKPinAnnotationColorGreen;
+		}
+		else if (priceLevel > 0) {
+			customPinView.pinColor = MKPinAnnotationColorRed;
+		}
+		else {
+			customPinView.pinColor = MKPinAnnotationColorPurple;
+		}
 	}
-	else if (priceLevel > 0) {
-		customPinView.pinColor = MKPinAnnotationColorRed;
-	}
-	else {
-		customPinView.pinColor = MKPinAnnotationColorPurple;
-	}
+	
+	if ([Engine sharedInstance].selectedSegment == 1) //byDistance
+	{
+		if ([self closestStation:annotation]) {
+			customPinView.pinColor = MKPinAnnotationColorGreen;
+		}
+		else {
+			customPinView.pinColor = MKPinAnnotationColorRed;
+		}
 
-
+	}
 	
 	customPinView.animatesDrop = NO;
 	customPinView.canShowCallout = YES;

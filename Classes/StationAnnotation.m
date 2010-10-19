@@ -11,7 +11,7 @@
 
 @implementation StationAnnotation
 
-@synthesize dataItem;
+@synthesize dataItem, distanceToUser;
 
 - (CLLocationCoordinate2D)coordinate;
 {
