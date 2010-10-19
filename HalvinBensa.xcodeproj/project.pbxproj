@@ -26,6 +26,7 @@
 		FA3DADBC126791BB00D1BA17 /* StationItemJson5.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA3DADBB126791BB00D1BA17 /* StationItemJson5.txt */; };
 		FA3DAE421267AF1F00D1BA17 /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3DAE411267AF1F00D1BA17 /* whiteButton.png */; };
 		FA3DAEA51267B7BC00D1BA17 /* TodoList.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA3DAEA41267B7BC00D1BA17 /* TodoList.txt */; };
+		FA5E74B4126DC5D000F2B2BF /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5E74B3126DC5D000F2B2BF /* Engine.m */; };
 		FA5F68E0126640AC00A332F1 /* FileReaderHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F68DF126640AC00A332F1 /* FileReaderHelper.m */; };
 		FA5F6A2B1266660500A332F1 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F6A221266660500A332F1 /* NSObject+SBJSON.m */; };
 		FA5F6A2C1266660500A332F1 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F6A241266660500A332F1 /* NSString+SBJSON.m */; };
@@ -76,6 +77,8 @@
 		FA3DADBB126791BB00D1BA17 /* StationItemJson5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StationItemJson5.txt; sourceTree = "<group>"; };
 		FA3DAE411267AF1F00D1BA17 /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteButton.png; path = images/whiteButton.png; sourceTree = "<group>"; };
 		FA3DAEA41267B7BC00D1BA17 /* TodoList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TodoList.txt; sourceTree = "<group>"; };
+		FA5E74B2126DC5D000F2B2BF /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
+		FA5E74B3126DC5D000F2B2BF /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Engine.m; sourceTree = "<group>"; };
 		FA5F68DE126640AC00A332F1 /* FileReaderHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileReaderHelper.h; sourceTree = "<group>"; };
 		FA5F68DF126640AC00A332F1 /* FileReaderHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileReaderHelper.m; sourceTree = "<group>"; };
 		FA5F68E71266411900A332F1 /* Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug.h; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				FA5F6D3C1267699D00A332F1 /* PriceItem.m */,
 				FA6A00C41268E71F00E89EF4 /* UICreator.h */,
 				FA6A00C51268E71F00E89EF4 /* UICreator.m */,
+				FA5E74B2126DC5D000F2B2BF /* Engine.h */,
+				FA5E74B3126DC5D000F2B2BF /* Engine.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 				FA5F6D3D1267699D00A332F1 /* PriceItem.m in Sources */,
 				FA6A00C61268E71F00E89EF4 /* UICreator.m in Sources */,
 				FA01C8B6126CC774008F1411 /* OptionsViewController.m in Sources */,
+				FA5E74B4126DC5D000F2B2BF /* Engine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
