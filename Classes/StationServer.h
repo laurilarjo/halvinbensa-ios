@@ -18,6 +18,6 @@
 
 @property (nonatomic, retain) NSMutableArray *stationArray;
 
-- (NSArray *)stationsForMapRegion:(MKCoordinateRegion)region ofType:(NSInteger)type;
+- (NSArray *)stationsForMapRegion:(MKCoordinateRegion)region;
 
 @end

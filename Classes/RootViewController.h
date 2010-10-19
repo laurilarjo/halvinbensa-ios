@@ -14,8 +14,10 @@
 #import "OptionsViewController.h"
 #import "StationItem.h"
 #import "Debug.h"
+#import "Engine.h"
 
 @class DetailViewController;
+@class OptionsViewController;
 
 @interface RootViewController : UIViewController <MKMapViewDelegate>
 {
@@ -24,13 +26,16 @@
 	OptionsViewController *optionsViewController;
 	NSMutableArray *mapAnnotations;
 	StationServer *stationServer;
+	UISegmentedControl *segmentControl;
 }
 
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 @property (nonatomic, retain) IBOutlet OptionsViewController *optionsViewController;
 @property (nonatomic, retain) NSMutableArray *mapAnnotations;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *segmentControl;
 
 -(IBAction)showOptionsPage;
+-(IBAction)segmentChanged;
 
 @end

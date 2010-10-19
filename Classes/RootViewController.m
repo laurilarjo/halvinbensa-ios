@@ -12,7 +12,7 @@
 @implementation RootViewController
 
 @synthesize mapView, mapAnnotations, 
-	detailViewController, optionsViewController;
+	detailViewController, optionsViewController, segmentControl;
 
 
 - (void)gotoStartLocation
@@ -44,7 +44,9 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 		if (price > mostExpensive)
 			mostExpensive = price;
 	}
-	CMLog(@"cheapest: %f, mostExpensive: %f", cheapest, mostExpensive);
+	
+	//CMLog(@"cheapest: %f, mostExpensive: %f", cheapest, mostExpensive);
+	
 	//lasketaan halvimman ja kalleimman rajat
 	double priceGap = mostExpensive - cheapest;
 	double quarter = priceGap * 0.025;
@@ -60,6 +62,17 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 	
 }
 
+- (NSArray *)filterStationsByType:(NSArray *)stations
+{
+	NSMutableArray *result = [NSMutableArray arrayWithCapacity:10];
+	
+	for (StationAnnotation *annotation in stations) {
+		//
+	}
+}
+
+#pragma mark IBActionit	
+
 -(IBAction)showOptionsPage
 {
 	CMLog(@"showOptions");
@@ -68,6 +81,14 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 	
 	[self.navigationController presentModalViewController:optionsViewController animated:YES];
 	 
+}
+
+- (IBAction)segmentChanged
+{
+	NSInteger selected = segmentControl.selectedSegmentIndex;
+	CMLog(@"segment selected: %d", selected);
+	[Engine sharedInstance].selectedSegment = selected;
+	
 }
 
 #pragma mark -
@@ -81,7 +102,7 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 
 - (void)mapView:(MKMapView *)map regionDidChangeAnimated:(BOOL)animated
 {
-	NSArray *items = [stationServer stationsForMapRegion:mapView.region ofType:1];
+	NSArray *items = [stationServer stationsForMapRegion:mapView.region];
 	
 	
     NSArray *oldAnnotations = mapView.annotations;

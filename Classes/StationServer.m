@@ -13,7 +13,8 @@
 @synthesize stationArray;
 
 
-- (NSArray *)stationsForMapRegion:(MKCoordinateRegion)region ofType:(NSInteger)type
+//Palauttaa StationAnnotation-arrayn kartalla näkyvistä asemista
+- (NSArray *)stationsForMapRegion:(MKCoordinateRegion)region
 {
 	NSMutableArray *results = [NSMutableArray arrayWithCapacity:10];
 	
