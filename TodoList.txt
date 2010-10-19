@@ -12,9 +12,9 @@ DONE (ei onnistunut kunnolla): options siirtymään vielä säätöä, jotta ala
 DONE: options-sivulle mahdollisuus ruksia mitkä bensojen hinnat haluaa näyttää
 DONE: toteuta refresh
 - laske lähimmän (lähimpien) asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella
-- laske optimin asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella
 - webservice juttua..
 - kun hintaa päivitetään, näytä spinneri check ja ruksin kohdalla
+- laske optimin asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella
 
 Mieti ja testaa keissit:
 - ei löydetty yhtään asemaa

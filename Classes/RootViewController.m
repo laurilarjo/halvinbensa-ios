@@ -94,7 +94,13 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 {
 	NSInteger selected = segmentControl.selectedSegmentIndex;
 	CMLog(@"segment selected: %d", selected);
-	[Engine sharedInstance].selectedSegment = selected;	
+	[Engine sharedInstance].selectedSegment = selected;
+	if (selected == 1) {
+		CLLocationCoordinate2D origin = [[mapView userLocation] location].coordinate;
+		StationAnnotation *annotation = [mapView.annotations objectAtIndex:0];
+		CLLocationCoordinate2D destination = annotation.coordinate;
+		GDirectionItem *item = [googleDirections findRouteFrom:origin to:destination];
+	}
 }
 
 - (IBAction)refreshMap
@@ -205,13 +211,15 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 {
 	[super viewDidLoad];
 	
+	googleDirections = [[GoogleDirections alloc] init];	
+	stationServer = [[StationServer alloc] init];
+	
 	// create a custom navigation bar button and set it to always says "Back"
 	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
 	temporaryBarButtonItem.title = @"Takaisin";
 	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
 	[temporaryBarButtonItem release];
-	
-	stationServer = [[StationServer alloc] init];
+		
     self.mapView.mapType = MKMapTypeStandard;   // also MKMapTypeSatellite or MKMapTypeHybrid
 	self.mapView.showsUserLocation = YES;
 	

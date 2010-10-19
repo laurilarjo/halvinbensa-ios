@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "StationServer.h"
+#import "GoogleDirections.h"
 #import "StationAnnotation.h"
 #import "DetailViewController.h"
 #import "OptionsViewController.h"
 #import "StationItem.h"
+#import "GDirectionItem.h"
 #import "Debug.h"
 #import "Engine.h"
 
@@ -26,6 +28,7 @@
 	OptionsViewController *optionsViewController;
 	NSMutableArray *mapAnnotations;
 	StationServer *stationServer;
+	GoogleDirections *googleDirections;
 	UISegmentedControl *segmentControl;
 }
 
