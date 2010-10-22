@@ -35,8 +35,8 @@
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 @property (nonatomic, retain) IBOutlet OptionsViewController *optionsViewController;
-@property (nonatomic, retain) NSMutableArray *mapAnnotations;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *segmentControl;
+@property (nonatomic, retain) NSMutableArray *mapAnnotations;
 
 - (IBAction)showOptionsPage;
 - (IBAction)segmentChanged;

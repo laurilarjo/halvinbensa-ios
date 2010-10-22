@@ -14,6 +14,37 @@
 @synthesize uid, latitude, longitude, title, company,
 	address, city, prices;
 
+
+- (BOOL)isEqual:(id)other {
+    if (other == self)
+        return YES;
+    if (!other || ![other isKindOfClass:[self class]])
+        return NO;
+    return [self isEqualToStationItem:other];	
+}
+
+- (BOOL)isEqualToStationItem:(StationItem *)other {
+    if (other == self)
+        return YES;
+    if (!other || ![other isKindOfClass:[self class]])
+        return NO;
+    if (uid != other.uid)
+		return NO;
+	if (![latitude isEqualToString:other.latitude])
+		return NO;
+	if (![longitude isEqualToString:other.longitude])
+		return NO;
+	if (![title isEqualToString:other.title])
+		return NO;
+	if (![company isEqualToString:other.company])
+		return NO;
+	if (![address isEqualToString:other.address])
+		return NO;
+	if (![city isEqualToString:other.city])
+		return NO;
+	return YES;
+}
+
 -(id)initWithItem:(StationItem *)item
 {
 	if (self = [super init])

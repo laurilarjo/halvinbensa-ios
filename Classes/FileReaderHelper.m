@@ -29,7 +29,7 @@
 		contents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&fileError];
 		
 		//JSON parsiminen
-		CMLog(@"parsing JSON: %@", contents);
+		//CMLog(@"parsing JSON: %@", contents);
 		
 		if (contents == nil)
 		{

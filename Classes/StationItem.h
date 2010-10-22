@@ -37,4 +37,5 @@ enum Prices {
 @property (nonatomic, retain) NSArray *prices;
 
 -(id)initWithItem:(StationItem *)item;
+- (BOOL)isEqualToStationItem:(StationItem *)other;
 @end

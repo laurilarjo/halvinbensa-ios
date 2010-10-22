@@ -11,7 +11,7 @@
 
 @implementation RootViewController
 
-@synthesize mapView, mapAnnotations, 
+@synthesize mapView, mapAnnotations,
 	detailViewController, optionsViewController, segmentControl;
 
 
@@ -37,12 +37,15 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 	
 	//ensin etsitään kallein ja halvin
 	for (StationAnnotation *item in mapView.annotations) {
-		double price = [item priceOfType:index];
-		if (price < cheapest) {
-			cheapest = price;
+		if ([item isKindOfClass:[StationAnnotation class]])
+		{
+			double price = [item priceOfType:index];
+			if (price < cheapest) {
+				cheapest = price;
+			}
+			if (price > mostExpensive)
+				mostExpensive = price;
 		}
-		if (price > mostExpensive)
-			mostExpensive = price;
 	}
 	
 	//CMLog(@"cheapest: %f, mostExpensive: %f", cheapest, mostExpensive);
@@ -92,20 +95,24 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 }
 
 //
-- (NSArray *)filterStationsByType:(NSArray *)stations
+- (void)filterStationsBySelectedFuelType
 {
-	NSMutableArray *result = [NSMutableArray arrayWithCapacity:10];
+
 	NSInteger selectedFuelType = [Engine sharedInstance].selectedFuelType;
 	
-	for (StationAnnotation *annotation in stations) {
-		if ([annotation priceOfType:selectedFuelType] > 0) {
-			[result addObject:annotation];
+	NSMutableArray *removeThese = [NSMutableArray arrayWithCapacity:10];
+	for (StationAnnotation *annotation in [self.mapView annotations]) {
+		if ([annotation isKindOfClass:[StationAnnotation class]]) { //yrittää muuten kutsua MKUserLocation.priceOfType ja kaatuu	
+			if (![annotation priceOfType:selectedFuelType] > 0) {
+				[removeThese addObject:annotation];
+			}
 		}
 	}
+	//NSArray *new = [NSArray arrayWithArray:removeThese];
+	[self.mapView removeAnnotations:removeThese];
 	CMLog(@"stations filtered using fuelType: %d", selectedFuelType);
-	
-	return result;
 }
+
 
 #pragma mark IBActionit	
 
@@ -143,36 +150,31 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 
 - (void)mapView:(MKMapView *)map regionDidChangeAnimated:(BOOL)animated
 {
+	CMLog(@"Annotations in mapView before: %d", [[mapView annotations] count]);
 	//hae kartalla näkyvät asemat
 	NSArray *items = [stationServer stationsForMapRegion:mapView.region];
 	
-	//filtteröi pois asemat, joilla ei ole käytetyn bensan hintatietoa
-	items = [self filterStationsByType:items];
-	
-	//vaihdetaan uudet asemat vanhojen tilalle
-    NSArray *oldAnnotations = mapView.annotations;
-    [mapView removeAnnotations:oldAnnotations];	    
-	[mapView addAnnotations:items];
-	
-	
-	//tehdään saumaton operaatio, jolla ei tule merkkien välkkymistä kartalle
-	//jos löytyy molemmista, ei tehdä mitään
-	//jos löytyy vain itemsistä, (item ei löydy annotationsista), lisätään
-	//jos löytyy vain annotationsista (annotation ei löyty itemsistä), poistetaan
-	
-	/* TODO: TÄÄ EI NYT IHAN TOIMI, tulee SIGABRTtia
+	//kerää kaikki asemat omaan muistiin
 	for (StationAnnotation *item in items) {
-		if (![[mapView annotations] containsObject:item]) {
+		if (![self.mapAnnotations containsObject:item]) {
+			[self.mapAnnotations addObject:item];
+		}
+	}
+	
+	//filtteröi pois asemat, joilla ei ole käytetyn bensan hintatietoa
+	//items = [self filterStationsByType:items];
+	
+
+	for (StationAnnotation *item in self.mapAnnotations) {
+		if (![[mapView annotations] containsObject:item])
 			[mapView addAnnotation:item];
-		}
 	}
-	NSArray *oldAnnotations = mapView.annotations;
-	for (StationAnnotation *item in oldAnnotations) {
-		if (![items containsObject:item]) {
-			[mapView removeAnnotation:item];
-		}
-	}
-	 */
+	
+	[self filterStationsBySelectedFuelType];
+
+	
+	CMLog(@"Annotations in mapView after: %d", [[mapView annotations] count]);
+	
 	 
 
 }
@@ -251,6 +253,7 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 	
 	googleDirections = [[GoogleDirections alloc] init];	
 	stationServer = [[StationServer alloc] init];
+	self.mapAnnotations = [NSMutableArray arrayWithCapacity:10];
 	
 	// create a custom navigation bar button and set it to always says "Back"
 	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
@@ -260,9 +263,6 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 		
     self.mapView.mapType = MKMapTypeStandard;   // also MKMapTypeSatellite or MKMapTypeHybrid
 	self.mapView.showsUserLocation = YES;
-	
-	self.mapAnnotations = [[NSMutableArray alloc] initWithCapacity:2];	
-	//[mapView addAnnotations:stationServer.stationArray];
 	
 	[self gotoStartLocation];	
 	
@@ -316,7 +316,7 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 - (void)dealloc {
 	[mapView release];
 	[detailViewController release];
-	[mapAnnotations release];
+	[self.mapAnnotations release];
     [super dealloc];
 }
 

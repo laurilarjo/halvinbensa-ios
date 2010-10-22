@@ -54,6 +54,26 @@
 	return result;
 }
 
+- (BOOL)isEqual:(id)other {
+    if (other == self)
+        return YES;
+    if (!other || ![other isKindOfClass:[self class]])
+        return NO;
+    return [self isEqualToStationAnnotation:other];	
+}
+
+- (BOOL)isEqualToStationAnnotation:(StationAnnotation *)other
+{
+	if (other == self)
+		return YES;
+	if (!other || ![other isKindOfClass:[self class]])
+		return NO;
+	if (![self.dataItem isEqual:other.dataItem])
+		return NO;
+	return YES;
+	
+}
+
 - (id)init
 {	
 	if (self = [super init])

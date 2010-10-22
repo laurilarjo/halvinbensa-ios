@@ -1,6 +1,8 @@
 Calculating route distance:
 http://stackoverflow.com/questions/2673439/calculation-route-length
 
+Google-maps JSON: http://maps.googleapis.com/maps/api/directions/json?origin=60.177,24.938&destination=60.615,25.658&sensor=false
+
 JSON-parsinta:
 http://www.xprogress.com/post-44-how-to-parse-json-files-on-iphone-in-objective-c-into-nsarray-and-nsdictionary/
 http://mobile.tutsplus.com/tutorials/iphone/iphone-json-twitter-api/
