@@ -19,5 +19,6 @@
 }
 
 - (NSNumber *)findRouteFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination;
+- (CLLocationDistance)getDirectDistanceFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination;
 
 @end

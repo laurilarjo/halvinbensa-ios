@@ -11,12 +11,12 @@
 
 @interface Engine : NSObject {
 	
-	NSInteger selectedSegment;
+	NSInteger selectedCalculationType;
 	NSInteger selectedFuelType; //sama numerointi kuin enum Price95E = 0, jne..
 
 }
 
-@property (nonatomic) NSInteger selectedSegment;
+@property (nonatomic) NSInteger selectedCalculationType;
 @property (nonatomic) NSInteger selectedFuelType;
 
 + (Engine *) sharedInstance;

@@ -14,7 +14,7 @@
 
 	IBOutlet UIBarButtonItem *showOptionsButton;
 	IBOutlet UISegmentedControl *selectedFuelTypeControl;
-	IBOutlet UISegmentedControl *segmentControl;
+	IBOutlet UISegmentedControl *selectedCalculationTypeControl;
 }
 
 - (IBAction)backToPreviousView;

@@ -67,20 +67,50 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 
 - (BOOL)closestStation:(StationAnnotation *)annotation
 {
-	for (StationAnnotation *item in [mapView annotations]) {
-		if (item.distanceToUser == nil)
+	//Ensin lasketaan suoran viivan etäisyydet
+	for (StationAnnotation *item in self.mapAnnotations) {
+		if (item.distanceToUser < 1.0)
 		{
 			CLLocationCoordinate2D origin = [[mapView userLocation] location].coordinate;
 			CLLocationCoordinate2D destination = item.coordinate;
-			NSNumber *distance = [googleDirections findRouteFrom:origin to:destination];
+			CLLocationDistance distance = [googleDirections getDirectDistanceFrom:origin to:destination];
+			item.distanceToUser = distance;
+		}
+	}
+	/*
+	//Etsitään kaksi lähintä asemaa KESKEN
+	NSRange range;
+	range.location = 0; range.length = 2;
+	NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:range];
+	NSArray *closestStations = [NSArray arrayWithArray:[self.mapAnnotations objectsAtIndexes:indexes]];
+	for (StationAnnotation *item in self.mapAnnotations) {
+		if (item.distanceToUser < closest.distanceToUser)
+		{
+			closest = item;
+		}
+	}
+	for (StationAnnotation *item in [self mapAnnotations]) {
+		
+	}
+	
+	//Seuraavaksi haetaan Googlesta kahden lähimmän reitin pituudet talteen
+	for (StationAnnotation *item in [self mapAnnotations]) {
+		if (item.distanceToUser < 1.0)
+		{
+			CLLocationCoordinate2D origin = [[mapView userLocation] location].coordinate;
+			CLLocationCoordinate2D destination = item.coordinate;
+			CLLocationDistance distance = [[googleDirections findRouteFrom:origin to:destination] doubleValue];
 			
 			item.distanceToUser = distance;
 			
 		}
 	}
+	 */
+	
+	//Sitten katsotaan onko tämä nyt se lähin NÄKYVISTÄ asemista
 	StationAnnotation *closest = [[mapView annotations] objectAtIndex:0];
 	for (StationAnnotation *item in [mapView annotations]) {
-		if ([item.distanceToUser doubleValue] < [closest.distanceToUser doubleValue])
+		if (item.distanceToUser < closest.distanceToUser)
 		{
 			closest = item;
 		}
@@ -92,12 +122,13 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 	else {
 		return NO;
 	}
+	
+	//[closestStations release];
 }
 
-//
+//Poistetaan näkyvistä ne asemat, joissa ei myydä valittua polttoainetta
 - (void)filterStationsBySelectedFuelType
 {
-
 	NSInteger selectedFuelType = [Engine sharedInstance].selectedFuelType;
 	
 	NSMutableArray *removeThese = [NSMutableArray arrayWithCapacity:10];
@@ -108,7 +139,7 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 			}
 		}
 	}
-	//NSArray *new = [NSArray arrayWithArray:removeThese];
+	
 	[self.mapView removeAnnotations:removeThese];
 	CMLog(@"stations filtered using fuelType: %d", selectedFuelType);
 }
@@ -126,16 +157,19 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 	 
 }
 
-- (IBAction)segmentChanged
+- (IBAction)calculationTypeChanged
 {
 	NSInteger selected = segmentControl.selectedSegmentIndex;
 	CMLog(@"segment selected: %d", selected);
-	[Engine sharedInstance].selectedSegment = selected;
+	[Engine sharedInstance].selectedCalculationType = selected;
+	[self refreshMap];
 	
 }
 
 - (IBAction)refreshMap
 {
+	NSArray *oldAnnotations = [self.mapView annotations];
+	[self.mapView removeAnnotations:oldAnnotations];
 	[mapView.delegate mapView:mapView regionDidChangeAnimated:YES];	 
 }
 
@@ -148,34 +182,32 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 	//myös tämmönen on käytössä..
 }
 
+//Tähän tullaan käynnistyksessä kaksi kertaa, sillä alussa siirrytään käyttäjän kohdalle
 - (void)mapView:(MKMapView *)map regionDidChangeAnimated:(BOOL)animated
 {
 	CMLog(@"Annotations in mapView before: %d", [[mapView annotations] count]);
+	CMLog(@"Annotations in storage before: %d", [self.mapAnnotations count]);
 	//hae kartalla näkyvät asemat
 	NSArray *items = [stationServer stationsForMapRegion:mapView.region];
 	
-	//kerää kaikki asemat omaan muistiin
+	//kerää uudet asemat omaan muistiin
 	for (StationAnnotation *item in items) {
 		if (![self.mapAnnotations containsObject:item]) {
 			[self.mapAnnotations addObject:item];
 		}
 	}
 	
-	//filtteröi pois asemat, joilla ei ole käytetyn bensan hintatietoa
-	//items = [self filterStationsByType:items];
-	
-
+	//lisää uudet asemat kartalle
 	for (StationAnnotation *item in self.mapAnnotations) {
 		if (![[mapView annotations] containsObject:item])
 			[mapView addAnnotation:item];
 	}
 	
+	//filtteröi pois asemat, joilla ei ole käytetyn bensan hintatietoa
 	[self filterStationsBySelectedFuelType];
-
 	
 	CMLog(@"Annotations in mapView after: %d", [[mapView annotations] count]);
-	
-	 
+	CMLog(@"Annotations in storage after: %d", [self.mapAnnotations count]);
 
 }
 
@@ -196,7 +228,7 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 						  initWithAnnotation:annotation reuseIdentifier:annotationID] autorelease];
 	}
 	
-	if ([Engine sharedInstance].selectedSegment == 0) //byPrice
+	if ([Engine sharedInstance].selectedCalculationType == 0) //byPrice
 	{
 		//laitetaan hinnan mukaiset värit pinneille
 		double priceLevel = [self priceLevelForItem:annotation forType:[Engine sharedInstance].selectedFuelType];
@@ -211,7 +243,7 @@ Palautetaan -1 jos halpa, 0 jos neutraali, +1 jos kallis
 		}
 	}
 	
-	if ([Engine sharedInstance].selectedSegment == 1) //byDistance
+	if ([Engine sharedInstance].selectedCalculationType == 1) //byDistance
 	{
 		if ([self closestStation:annotation]) {
 			customPinView.pinColor = MKPinAnnotationColorGreen;

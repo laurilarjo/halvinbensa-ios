@@ -20,9 +20,9 @@
 //asetetaan segment control kohdilleen
 - (void)viewWillAppear:(BOOL)animated
 {
-	NSInteger selected = [Engine sharedInstance].selectedSegment;
-	segmentControl.selectedSegmentIndex = selected;
-	segmentControl.enabled = NO;
+	NSInteger selected = [Engine sharedInstance].selectedCalculationType;
+	selectedCalculationTypeControl.selectedSegmentIndex = selected;
+	selectedCalculationTypeControl.enabled = NO;
 }
 
 //päivitetään enginen arvot kohdalleen

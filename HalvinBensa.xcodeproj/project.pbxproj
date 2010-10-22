@@ -38,6 +38,7 @@
 		FA5F6D3D1267699D00A332F1 /* PriceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F6D3C1267699D00A332F1 /* PriceItem.m */; };
 		FA6A00C61268E71F00E89EF4 /* UICreator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6A00C51268E71F00E89EF4 /* UICreator.m */; };
 		FA886E431268DE450090C428 /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FA886E421268DE450090C428 /* blueButton.png */; };
+		FAB4F1461272241B00E08F3E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB4F1451272241B00E08F3E /* CoreLocation.framework */; };
 		FAC0C7901264EA8800BF955A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC0C78F1264EA8800BF955A /* MapKit.framework */; };
 		FAC0C7B71264EDAD00BF955A /* StationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC0C7B61264EDAD00BF955A /* StationAnnotation.m */; };
 		FAC0C8121264F99000BF955A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC0C8111264F99000BF955A /* DetailViewController.m */; };
@@ -104,6 +105,7 @@
 		FA6A00C41268E71F00E89EF4 /* UICreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICreator.h; sourceTree = "<group>"; };
 		FA6A00C51268E71F00E89EF4 /* UICreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICreator.m; sourceTree = "<group>"; };
 		FA886E421268DE450090C428 /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueButton.png; path = images/blueButton.png; sourceTree = "<group>"; };
+		FAB4F1451272241B00E08F3E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FAC0C78F1264EA8800BF955A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FAC0C7B51264EDAD00BF955A /* StationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationAnnotation.h; sourceTree = "<group>"; };
 		FAC0C7B61264EDAD00BF955A /* StationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationAnnotation.m; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				FAC0C7901264EA8800BF955A /* MapKit.framework in Frameworks */,
 				FAC0CA131265140200BF955A /* CoreData.framework in Frameworks */,
+				FAB4F1461272241B00E08F3E /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +233,7 @@
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
 				FAC0C78F1264EA8800BF955A /* MapKit.framework */,
 				FAC0CA121265140200BF955A /* CoreData.framework */,
+				FAB4F1451272241B00E08F3E /* CoreLocation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

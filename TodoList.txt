@@ -18,12 +18,16 @@ DONE: lisää options-sivu, jos mahdollista niin google maps-tyyliin.
 DONE (ei onnistunut kunnolla): options siirtymään vielä säätöä, jotta alapalkin saa pysymään paikallaan.
 DONE: options-sivulle mahdollisuus ruksia mitkä bensojen hinnat haluaa näyttää
 DONE: toteuta refresh
-DONE, mutta pitää parantaa: laske lähimmän (lähimpien) asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella
+DONE: laske lähimmän aseman sijainti ja näytä se kartalla vihreällä, muut punaisella
 - webservice juttua..
 - kun hintaa päivitetään, näytä spinneri check ja ruksin kohdalla
 - laske optimin asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella
+- google directions kunnolla käyttöön
 
 Mieti ja testaa keissit:
 - ei löydetty yhtään asemaa
 - asemalla ei myydä esim. 98E
 - tiettyä hintaa ei ole päivitetty viiteen päivään
+
+Bugit:
+Kun options viewstä palaa takaisin, pitäisi näkymä refreshata. Nyt jos bensatyyppiä vaihdetaan, jää väärät pinnit näkyviin kunnes käyttäjä liikuttaa karttaa.

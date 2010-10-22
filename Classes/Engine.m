@@ -11,7 +11,7 @@
 
 @implementation Engine
 
-@synthesize selectedSegment, selectedFuelType;
+@synthesize selectedCalculationType, selectedFuelType;
 
 static Engine *sharedEngine = nil;
 

@@ -39,7 +39,7 @@
 @property (nonatomic, retain) NSMutableArray *mapAnnotations;
 
 - (IBAction)showOptionsPage;
-- (IBAction)segmentChanged;
+- (IBAction)calculationTypeChanged;
 - (IBAction)refreshMap;
 
 @end

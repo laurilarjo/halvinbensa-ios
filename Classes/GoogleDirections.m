@@ -11,10 +11,27 @@
 
 @implementation GoogleDirections
 
+- (CLLocationDistance)getDirectDistanceFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination
+{
+	CLLocation *originLoc;
+	if (TARGET_IPHONE_SIMULATOR)
+	{
+		originLoc = [[CLLocation alloc] initWithLatitude:60.102 longitude:24.734];
+	}
+	else {
+		originLoc = [[CLLocation alloc] initWithLatitude:origin.latitude longitude:origin.longitude];
+	}
+
+	CLLocation *destinationLoc = [[CLLocation alloc] initWithLatitude:destination.latitude longitude:destination.longitude];
+	CLLocationDistance distance = [originLoc distanceFromLocation:destinationLoc];
+	CMLog(@"Direct distance: %f", distance);
+	return distance;
+}
 
 //distancen hakeminen toimii, mutta on liian hidas. yksi haku kestää melkein sekunnin.
 - (NSNumber *)findRouteFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination
 {
+	CMLog(@"Calculating distance...");
 	NSString *originString;
 	if (TARGET_IPHONE_SIMULATOR)
 	{
@@ -45,10 +62,10 @@
 		
 		result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 		
-		CMLog(@"Response Code: %d", [response statusCode]);
+		//CMLog(@"Response Code: %d", [response statusCode]);
 		if ([response statusCode] >= 200 && [response statusCode] < 300)
 		{
-			CMLog(@"Result: %@", result);
+			//CMLog(@"Result: %@", result);
 			success = YES;
 		}
 		retryCount++;
@@ -65,6 +82,7 @@
 	NSArray *legs = [[routes objectAtIndex:0] objectForKey:@"legs"];
 	NSNumber *distance = [[legs objectAtIndex:0] valueForKeyPath:@"distance.value"];
 	
+	CMLog(@"Found distance: %f", [distance doubleValue]);
 	return distance;
 }
 

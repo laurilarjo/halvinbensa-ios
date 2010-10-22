@@ -89,7 +89,7 @@
 {
 	if (self = [super init])
 	{
-		CMLog(@"Creating new annotation");
+		//CMLog(@"Creating new annotation");
 		dataItem = [[StationItem alloc] initWithItem:item];
 	}
 	return self;
@@ -97,7 +97,7 @@
 
 - (void) dealloc
 {
-	CMLog(@"Deleting annotation.");
+	//CMLog(@"Deleting annotation.");
 	[dataItem release];
 	[super dealloc];
 }
