@@ -29,6 +29,7 @@
 		FA50909912731347002CA500 /* Ajankäyttö.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA50909812731347002CA500 /* Ajankäyttö.txt */; };
 		FA50911712738210002CA500 /* NVPolylineAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA50911412738210002CA500 /* NVPolylineAnnotation.m */; };
 		FA50911812738210002CA500 /* NVPolylineAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA50911612738210002CA500 /* NVPolylineAnnotationView.m */; };
+		FA50915012738767002CA500 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA50914F12738767002CA500 /* MapView.m */; };
 		FA5E74B4126DC5D000F2B2BF /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5E74B3126DC5D000F2B2BF /* Engine.m */; };
 		FA5E75DB126DE90B00F2B2BF /* GoogleDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5E75DA126DE90B00F2B2BF /* GoogleDirections.m */; };
 		FA5E75E0126DEC8100F2B2BF /* GDirectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5E75DF126DEC8100F2B2BF /* GDirectionItem.m */; };
@@ -88,6 +89,8 @@
 		FA50911412738210002CA500 /* NVPolylineAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVPolylineAnnotation.m; sourceTree = "<group>"; };
 		FA50911512738210002CA500 /* NVPolylineAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVPolylineAnnotationView.h; sourceTree = "<group>"; };
 		FA50911612738210002CA500 /* NVPolylineAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVPolylineAnnotationView.m; sourceTree = "<group>"; };
+		FA50914E12738767002CA500 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		FA50914F12738767002CA500 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
 		FA5E74B2126DC5D000F2B2BF /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
 		FA5E74B3126DC5D000F2B2BF /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Engine.m; sourceTree = "<group>"; };
 		FA5E75D9126DE90B00F2B2BF /* GoogleDirections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleDirections.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				FA5E75DA126DE90B00F2B2BF /* GoogleDirections.m */,
 				FA5E75DE126DEC8100F2B2BF /* GDirectionItem.h */,
 				FA5E75DF126DEC8100F2B2BF /* GDirectionItem.m */,
+				FA50914E12738767002CA500 /* MapView.h */,
+				FA50914F12738767002CA500 /* MapView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 				FA5E75E0126DEC8100F2B2BF /* GDirectionItem.m in Sources */,
 				FA50911712738210002CA500 /* NVPolylineAnnotation.m in Sources */,
 				FA50911812738210002CA500 /* NVPolylineAnnotationView.m in Sources */,
+				FA50915012738767002CA500 /* MapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

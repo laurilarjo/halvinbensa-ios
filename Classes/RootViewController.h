@@ -7,15 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
-#import "StationServer.h"
-#import "GoogleDirections.h"
-#import "StationAnnotation.h"
-#import "NVPolylineAnnotationView.h"
 #import "DetailViewController.h"
 #import "OptionsViewController.h"
-#import "StationItem.h"
-#import "GDirectionItem.h"
+#import "MapView.h"
 #import "Debug.h"
 #import "Engine.h"
 
@@ -24,25 +18,20 @@
 
 @interface RootViewController : UIViewController <MKMapViewDelegate>
 {
-	MKMapView *mapView;
+	MapView *mapView;
 	DetailViewController *detailViewController;
 	OptionsViewController *optionsViewController;
-	NSMutableArray *mapAnnotations;
-	NVPolylineAnnotation *routeAnnotation;
-	StationServer *stationServer;
-	GoogleDirections *googleDirections;
 	UISegmentedControl *segmentControl;
 }
 
-@property (nonatomic, retain) IBOutlet MKMapView *mapView;
+@property (nonatomic, retain) IBOutlet MapView *mapView;
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 @property (nonatomic, retain) IBOutlet OptionsViewController *optionsViewController;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *segmentControl;
-@property (nonatomic, retain) NSMutableArray *mapAnnotations;
-@property (nonatomic, retain) NVPolylineAnnotation *routeAnnotation;
 
 - (IBAction)showOptionsPage;
 - (IBAction)calculationTypeChanged;
 - (IBAction)refreshMap;
+- (void)showDetailsWithData:(StationItem *)item;
 
 @end
