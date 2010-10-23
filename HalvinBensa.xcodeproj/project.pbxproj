@@ -26,6 +26,9 @@
 		FA3DADBC126791BB00D1BA17 /* StationItemJson5.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA3DADBB126791BB00D1BA17 /* StationItemJson5.txt */; };
 		FA3DAE421267AF1F00D1BA17 /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3DAE411267AF1F00D1BA17 /* whiteButton.png */; };
 		FA3DAEA51267B7BC00D1BA17 /* TodoList.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA3DAEA41267B7BC00D1BA17 /* TodoList.txt */; };
+		FA50909912731347002CA500 /* Ajankäyttö.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA50909812731347002CA500 /* Ajankäyttö.txt */; };
+		FA50911712738210002CA500 /* NVPolylineAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA50911412738210002CA500 /* NVPolylineAnnotation.m */; };
+		FA50911812738210002CA500 /* NVPolylineAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA50911612738210002CA500 /* NVPolylineAnnotationView.m */; };
 		FA5E74B4126DC5D000F2B2BF /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5E74B3126DC5D000F2B2BF /* Engine.m */; };
 		FA5E75DB126DE90B00F2B2BF /* GoogleDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5E75DA126DE90B00F2B2BF /* GoogleDirections.m */; };
 		FA5E75E0126DEC8100F2B2BF /* GDirectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5E75DF126DEC8100F2B2BF /* GDirectionItem.m */; };
@@ -80,6 +83,11 @@
 		FA3DADBB126791BB00D1BA17 /* StationItemJson5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StationItemJson5.txt; sourceTree = "<group>"; };
 		FA3DAE411267AF1F00D1BA17 /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteButton.png; path = images/whiteButton.png; sourceTree = "<group>"; };
 		FA3DAEA41267B7BC00D1BA17 /* TodoList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TodoList.txt; sourceTree = "<group>"; };
+		FA50909812731347002CA500 /* Ajankäyttö.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Ajankäyttö.txt"; sourceTree = "<group>"; };
+		FA50911312738210002CA500 /* NVPolylineAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVPolylineAnnotation.h; sourceTree = "<group>"; };
+		FA50911412738210002CA500 /* NVPolylineAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVPolylineAnnotation.m; sourceTree = "<group>"; };
+		FA50911512738210002CA500 /* NVPolylineAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVPolylineAnnotationView.h; sourceTree = "<group>"; };
+		FA50911612738210002CA500 /* NVPolylineAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVPolylineAnnotationView.m; sourceTree = "<group>"; };
 		FA5E74B2126DC5D000F2B2BF /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
 		FA5E74B3126DC5D000F2B2BF /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Engine.m; sourceTree = "<group>"; };
 		FA5E75D9126DE90B00F2B2BF /* GoogleDirections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleDirections.h; sourceTree = "<group>"; };
@@ -146,19 +154,16 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FA50911212737FFE002CA500 /* Controllers */,
 				FA5F6A1F1266660500A332F1 /* JSON */,
 				FA5F68E71266411900A332F1 /* Debug.h */,
 				1D3623240D0F684500981E51 /* HalvinBensaAppDelegate.h */,
 				1D3623250D0F684500981E51 /* HalvinBensaAppDelegate.m */,
-				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
-				28C286E00D94DF7D0034E888 /* RootViewController.m */,
-				FAC0C8101264F99000BF955A /* DetailViewController.h */,
-				FAC0C8111264F99000BF955A /* DetailViewController.m */,
-				FAE3B97312660A14003AD43C /* UpdatePriceViewController.h */,
-				FAE3B97412660A14003AD43C /* UpdatePriceViewController.m */,
-				FA01C8B4126CC774008F1411 /* OptionsViewController.h */,
-				FA01C8B5126CC774008F1411 /* OptionsViewController.m */,
 				FAC0CA07126513F500BF955A /* StationServer.h */,
+				FA50911312738210002CA500 /* NVPolylineAnnotation.h */,
+				FA50911412738210002CA500 /* NVPolylineAnnotation.m */,
+				FA50911512738210002CA500 /* NVPolylineAnnotationView.h */,
+				FA50911612738210002CA500 /* NVPolylineAnnotationView.m */,
 				FAC0CA08126513F500BF955A /* StationServer.m */,
 				FAC0C7B51264EDAD00BF955A /* StationAnnotation.h */,
 				FAC0C7B61264EDAD00BF955A /* StationAnnotation.m */,
@@ -207,6 +212,7 @@
 				28A0AAE50D9B0CCF005BE974 /* HalvinBensa_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				FA3DAEA41267B7BC00D1BA17 /* TodoList.txt */,
+				FA50909812731347002CA500 /* Ajankäyttö.txt */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -263,6 +269,21 @@
 				FAE3B90E1265E7C7003AD43C /* mesh_grey_bg.jpg */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		FA50911212737FFE002CA500 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
+				28C286E00D94DF7D0034E888 /* RootViewController.m */,
+				FAC0C8101264F99000BF955A /* DetailViewController.h */,
+				FAC0C8111264F99000BF955A /* DetailViewController.m */,
+				FAE3B97312660A14003AD43C /* UpdatePriceViewController.h */,
+				FAE3B97412660A14003AD43C /* UpdatePriceViewController.m */,
+				FA01C8B4126CC774008F1411 /* OptionsViewController.h */,
+				FA01C8B5126CC774008F1411 /* OptionsViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		FA5F6A1F1266660500A332F1 /* JSON */ = {
@@ -352,6 +373,7 @@
 				FA886E431268DE450090C428 /* blueButton.png in Resources */,
 				FA1CF7FC126B75A900CC2237 /* StationItemJson6.txt in Resources */,
 				FA01C8B8126CC824008F1411 /* OptionsViewController.xib in Resources */,
+				FA50909912731347002CA500 /* Ajankäyttö.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +404,8 @@
 				FA5E74B4126DC5D000F2B2BF /* Engine.m in Sources */,
 				FA5E75DB126DE90B00F2B2BF /* GoogleDirections.m in Sources */,
 				FA5E75E0126DEC8100F2B2BF /* GDirectionItem.m in Sources */,
+				FA50911712738210002CA500 /* NVPolylineAnnotation.m in Sources */,
+				FA50911812738210002CA500 /* NVPolylineAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

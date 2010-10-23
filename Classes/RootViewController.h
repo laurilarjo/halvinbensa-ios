@@ -11,6 +11,7 @@
 #import "StationServer.h"
 #import "GoogleDirections.h"
 #import "StationAnnotation.h"
+#import "NVPolylineAnnotationView.h"
 #import "DetailViewController.h"
 #import "OptionsViewController.h"
 #import "StationItem.h"
@@ -27,6 +28,7 @@
 	DetailViewController *detailViewController;
 	OptionsViewController *optionsViewController;
 	NSMutableArray *mapAnnotations;
+	NVPolylineAnnotation *routeAnnotation;
 	StationServer *stationServer;
 	GoogleDirections *googleDirections;
 	UISegmentedControl *segmentControl;
@@ -37,6 +39,7 @@
 @property (nonatomic, retain) IBOutlet OptionsViewController *optionsViewController;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *segmentControl;
 @property (nonatomic, retain) NSMutableArray *mapAnnotations;
+@property (nonatomic, retain) NVPolylineAnnotation *routeAnnotation;
 
 - (IBAction)showOptionsPage;
 - (IBAction)calculationTypeChanged;
