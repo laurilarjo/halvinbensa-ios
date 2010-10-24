@@ -29,7 +29,7 @@
 }
 
 //distancen hakeminen toimii, mutta on liian hidas. yksi haku kestää melkein sekunnin.
-- (NSNumber *)findRouteFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination
+- (NSArray *)findRouteFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination
 {
 	CMLog(@"Calculating distance...");
 	NSString *originString;
@@ -41,71 +41,55 @@
 		originString = [NSString stringWithFormat:@"%f,%f", origin.latitude, origin.longitude];
 	}
  
-	NSString *destinationString = [NSString stringWithFormat:@"%f,%f", destination.latitude, destination.longitude];
-	NSString *urlString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/directions/json?origin=%@&destination=%@&sensor=false",
-		originString, destinationString];
+	NSString* daddr = [NSString stringWithFormat:@"%f,%f", destination.latitude, destination.longitude];
 	
-	NSURL *url = [NSURL URLWithString:urlString];
+	NSString* apiUrlStr = [NSString stringWithFormat:@"http://maps.google.com/maps?output=dragdir&saddr=%@&daddr=%@", originString, daddr];
+	NSURL* apiUrl = [NSURL URLWithString:apiUrlStr];
+	CMLog(@"Google Maps API url: %@", apiUrl);
+	NSString *apiResponse = [NSString stringWithContentsOfURL:apiUrl];
+	NSString* encodedPoints = [apiResponse stringByMatching:@"points:\\\"([^\\\"]*)\\\"" capture:1L];
 	
-	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-	
-	NSString *result = nil;
-	BOOL success = NO;
-	int retryCount = 0;
-	
-	while (success == false && retryCount < 2) {
-		NSHTTPURLResponse *response = nil;
-		NSError *error = nil;
-		NSData *responseData = 
-		[NSURLConnection sendSynchronousRequest:request returningResponse:&response
-										  error:&error];
-		
-		result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-		
-		//CMLog(@"Response Code: %d", [response statusCode]);
-		if ([response statusCode] >= 200 && [response statusCode] < 300)
-		{
-			//CMLog(@"Result: %@", result);
-			success = YES;
-		}
-		retryCount++;
-
-	}
-	//[request release];
-	//[url release];
-	
-	//JSON Framework magic to obtain a dictionary from the jsonString.
-    NSDictionary *results = [result JSONValue];
-	
-    //kaivetaan sieltä distance
-    NSArray *routes  = [results objectForKey:@"routes"];
-	NSArray *legs = [[routes objectAtIndex:0] objectForKey:@"legs"];
-	NSNumber *distance = [[legs objectAtIndex:0] valueForKeyPath:@"distance.value"];
-	
-	CMLog(@"Found distance: %f", [distance doubleValue]);
-	return distance;
+	return [self decodePolyLine:[encodedPoints mutableCopy]];
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-	//The string received from google's servers
-    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+-(NSMutableArray *)decodePolyLine: (NSMutableString *)encoded {
+	[encoded replaceOccurrencesOfString:@"\\\\" withString:@"\\"
+								options:NSLiteralSearch
+								  range:NSMakeRange(0, [encoded length])];
+	NSInteger len = [encoded length];
+	NSInteger index = 0;
+	NSMutableArray *array = [[[NSMutableArray alloc] init] autorelease];
+	NSInteger lat=0;
+	NSInteger lng=0;
+	while (index < len) {
+		NSInteger b;
+		NSInteger shift = 0;
+		NSInteger result = 0;
+		do {
+			b = [encoded characterAtIndex:index++] - 63;
+			result |= (b & 0x1f) << shift;
+			shift += 5;
+		} while (b >= 0x20);
+		NSInteger dlat = ((result & 1) ? ~(result >> 1) : (result >> 1));
+		lat += dlat;
+		shift = 0;
+		result = 0;
+		do {
+			b = [encoded characterAtIndex:index++] - 63;
+			result |= (b & 0x1f) << shift;
+			shift += 5;
+		} while (b >= 0x20);
+		NSInteger dlng = ((result & 1) ? ~(result >> 1) : (result >> 1));
+		lng += dlng;
+		NSNumber *latitude = [[[NSNumber alloc] initWithFloat:lat * 1e-5] autorelease];
+		NSNumber *longitude = [[[NSNumber alloc] initWithFloat:lng * 1e-5] autorelease];
+		printf("[%f,", [latitude doubleValue]);
+		printf("%f]", [longitude doubleValue]);
+		CLLocation *loc = [[[CLLocation alloc] initWithLatitude:[latitude floatValue] longitude:[longitude floatValue]] autorelease];
+		[array addObject:loc];
+	}
 	
-    //JSON Framework magic to obtain a dictionary from the jsonString.
-    NSDictionary *results = [jsonString JSONValue];
-	
-    //Now we need to obtain our coordinates
-    NSArray *routes  = [results objectForKey:@"routes"];
-	NSArray *legs = [[routes objectAtIndex:0] objectForKey:@"legs"];
-	NSString *distance = [[legs objectAtIndex:0] objectForKey:@"distance"];
-   //NSArray *legs = [[placemark objectAtIndex:0] valueForKeyPath:@"Point.coordinates"];
-	
-    	
-    //Debug.
-    //NSLog(@"Latitude - Longitude: %f %f", latitude, longitude);
-	
-	
-    [jsonString release];
+	return array;
 }
 
 @end

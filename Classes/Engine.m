@@ -11,7 +11,7 @@
 
 @implementation Engine
 
-@synthesize selectedCalculationType, selectedFuelType;
+@synthesize selectedCalculationType, selectedFuelType, mapAnnotations;
 
 static Engine *sharedEngine = nil;
 
@@ -34,8 +34,37 @@ static Engine *sharedEngine = nil;
     return nil;
 }
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		self.mapAnnotations = [NSMutableArray arrayWithCapacity:10];
+		stationServer = [[StationServer alloc] init];
+		googleDirections = [[GoogleDirections alloc] init];
+	}
+	return self;	
+}
+
+- (NSArray *)stationsForMapRegion:(MKCoordinateRegion)region
+{
+	return [stationServer stationsForMapRegion:region];
+}
+
+- (NSArray *)findRouteFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination
+{
+	return [googleDirections findRouteFrom:origin to:destination];
+}
+
 - (id) copyWithZone:(NSZone *)zone {
     return self;
+}
+
+- (void)dealloc
+{
+	[mapAnnotations release];
+	[stationServer release];
+	[googleDirections release];
+	[super dealloc];
 }
 
 @end

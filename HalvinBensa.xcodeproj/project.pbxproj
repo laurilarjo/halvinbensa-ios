@@ -50,6 +50,7 @@
 		FAC0CA09126513F500BF955A /* StationServer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC0CA08126513F500BF955A /* StationServer.m */; };
 		FAC0CA131265140200BF955A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC0CA121265140200BF955A /* CoreData.framework */; };
 		FAC0CA18126518DB00BF955A /* StationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC0CA17126518DB00BF955A /* StationItem.m */; };
+		FAD1451B127462560070F9CC /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD1451A127462560070F9CC /* RegexKitLite.m */; };
 		FAE3B90F1265E7C7003AD43C /* mesh_grey_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE3B90E1265E7C7003AD43C /* mesh_grey_bg.jpg */; };
 		FAE3B9661265F5D8003AD43C /* light_grey_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE3B9651265F5D8003AD43C /* light_grey_bg.jpg */; };
 		FAE3B96B1265FC7D003AD43C /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE3B9691265FC7D003AD43C /* check.png */; };
@@ -128,6 +129,8 @@
 		FAC0CA121265140200BF955A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FAC0CA16126518DB00BF955A /* StationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationItem.h; sourceTree = "<group>"; };
 		FAC0CA17126518DB00BF955A /* StationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationItem.m; sourceTree = "<group>"; };
+		FAD14519127462560070F9CC /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		FAD1451A127462560070F9CC /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		FAE3B90E1265E7C7003AD43C /* mesh_grey_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = mesh_grey_bg.jpg; path = images/mesh_grey_bg.jpg; sourceTree = "<group>"; };
 		FAE3B9651265F5D8003AD43C /* light_grey_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = light_grey_bg.jpg; path = images/light_grey_bg.jpg; sourceTree = "<group>"; };
 		FAE3B9691265FC7D003AD43C /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = check.png; path = images/check.png; sourceTree = "<group>"; };
@@ -157,16 +160,17 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FAD14518127462560070F9CC /* RegexKitLite */,
 				FA50911212737FFE002CA500 /* Controllers */,
 				FA5F6A1F1266660500A332F1 /* JSON */,
 				FA5F68E71266411900A332F1 /* Debug.h */,
 				1D3623240D0F684500981E51 /* HalvinBensaAppDelegate.h */,
 				1D3623250D0F684500981E51 /* HalvinBensaAppDelegate.m */,
-				FAC0CA07126513F500BF955A /* StationServer.h */,
 				FA50911312738210002CA500 /* NVPolylineAnnotation.h */,
 				FA50911412738210002CA500 /* NVPolylineAnnotation.m */,
 				FA50911512738210002CA500 /* NVPolylineAnnotationView.h */,
 				FA50911612738210002CA500 /* NVPolylineAnnotationView.m */,
+				FAC0CA07126513F500BF955A /* StationServer.h */,
 				FAC0CA08126513F500BF955A /* StationServer.m */,
 				FAC0C7B51264EDAD00BF955A /* StationAnnotation.h */,
 				FAC0C7B61264EDAD00BF955A /* StationAnnotation.m */,
@@ -309,6 +313,15 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		FAD14518127462560070F9CC /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				FAD14519127462560070F9CC /* RegexKitLite.h */,
+				FAD1451A127462560070F9CC /* RegexKitLite.m */,
+			);
+			path = RegexKitLite;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -412,6 +425,7 @@
 				FA50911712738210002CA500 /* NVPolylineAnnotation.m in Sources */,
 				FA50911812738210002CA500 /* NVPolylineAnnotationView.m in Sources */,
 				FA50915012738767002CA500 /* MapView.m in Sources */,
+				FAD1451B127462560070F9CC /* RegexKitLite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +447,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HalvinBensa_Prefix.pch;
 				INFOPLIST_FILE = "HalvinBensa-Info.plist";
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = HalvinBensa;
 			};
 			name = Debug;
@@ -450,6 +465,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HalvinBensa_Prefix.pch;
 				INFOPLIST_FILE = "HalvinBensa-Info.plist";
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = HalvinBensa;
 				VALIDATE_PRODUCT = YES;
 			};

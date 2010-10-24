@@ -35,5 +35,6 @@
 
 -(id)initWithItem:(StationItem *)item;
 -(double)priceOfType:(NSInteger)index;
+- (BOOL)isEqualToStationAnnotation:(StationAnnotation *)other;
 
 @end

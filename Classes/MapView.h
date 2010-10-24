@@ -12,24 +12,19 @@
 #import "NVPolylineAnnotation.h"
 #import "StationServer.h"
 
-
 @class RootViewController;
-
 
 @interface MapView : UIView<MKMapViewDelegate> {
 
 	RootViewController *parent;
 	MKMapView *mapView;
-	NVPolylineAnnotation *routeAnnotation;
-	NSMutableArray *mapAnnotations;
-	StationServer *stationServer;
+	NVPolylineAnnotation *routeAnnotation;	
 }
 @property (nonatomic, retain) MKMapView *mapView;
 @property (nonatomic, retain) NVPolylineAnnotation *routeAnnotation;
-@property (nonatomic, retain) NSMutableArray *mapAnnotations;
 
 - (id) initWithFrame:(CGRect)frame parent:(RootViewController *)controller;
-- (void)addRoute:(NSArray *)points;
+- (void)addRouteTo:(CLLocationCoordinate2D)destination;
 - (void)refreshMap;
 - (void)gotoStartLocation;
 

@@ -9,16 +9,19 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import "GDirectionItem.h"
+#import "NVPolylineAnnotation.h"
 #include "TargetConditionals.h"
 #include "JSON.h"
 #import "Debug.h"
+#import "RegexKitLite.h"
 
 
 @interface GoogleDirections : NSObject {
 
 }
 
-- (NSNumber *)findRouteFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination;
+- (NSArray *)findRouteFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination;
 - (CLLocationDistance)getDirectDistanceFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination;
+-(NSMutableArray *)decodePolyLine: (NSMutableString *)encoded;
 
 @end
