@@ -22,10 +22,11 @@ DONE (ei onnistunut kunnolla): options siirtymään vielä säätöä, jotta ala
 DONE: options-sivulle mahdollisuus ruksia mitkä bensojen hinnat haluaa näyttää
 DONE: toteuta refresh
 DONE: laske lähimmän aseman sijainti ja näytä se kartalla vihreällä, muut punaisella
+DONE: google directions kunnolla käyttöön. nyt kun valitsee aseman, voi klikata näytä reitti kartalla, jonka jälkeen tehdään google haku ja piirretään reitti
 - webservice juttua..
 - kun hintaa päivitetään, näytä spinneri check ja ruksin kohdalla
 - laske optimin asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella
-- google directions kunnolla käyttöön
+
 
 Mieti ja testaa keissit:
 - ei löydetty yhtään asemaa

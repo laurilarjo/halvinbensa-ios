@@ -46,5 +46,6 @@
 - (IBAction)confirmPrice:(UIButton *)sender;
 - (IBAction)changePrice:(UIButton *)sender;
 - (IBAction)priceUploaded:(PriceItem *)item;
+- (IBAction)displayRoute:(UIButton *)sender;
 
 @end

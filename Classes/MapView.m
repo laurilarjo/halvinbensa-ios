@@ -27,7 +27,8 @@
 		[mapView setDelegate:self];
 		[self addSubview:mapView];
 		parent = controller;
-		//googleDirections = [[GoogleDirections alloc] init];
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotoStartLocation:) name:@"displayRoutePressed" object:nil];
 		
 		[self gotoStartLocation];
 	}
@@ -36,7 +37,6 @@
 
 - (void)gotoStartLocation
 {
-	
 	MKCoordinateRegion newRegion;
 	newRegion.center.latitude = 60.21;
 	newRegion.center.longitude = 24.80;
@@ -44,6 +44,16 @@
 	newRegion.span.longitudeDelta = 1.05;
 	
     [self.mapView setRegion:newRegion animated:YES];
+}
+- (void)gotoStartLocation:(NSNotification *)note
+{
+	CMLog(@"called");
+	StationItem *item = (StationItem *)[note object];
+	CLLocationCoordinate2D coord;
+	coord.latitude = [item.latitude doubleValue]; 
+	coord.longitude = [item.longitude doubleValue];
+	[self addRouteTo:coord];
+	
 }
 
 - (void)addRouteTo:(CLLocationCoordinate2D)destination;
@@ -247,10 +257,10 @@
 	{
 		//laitetaan hinnan mukaiset värit pinneille
 		double priceLevel = [self priceLevelForItem:annotation forType:[Engine sharedInstance].selectedFuelType];
-		if (priceLevel < 0) {
+		if (priceLevel < 0) { //halpa
 			customPinView.pinColor = MKPinAnnotationColorGreen;
 		}
-		else if (priceLevel > 0) {
+		else if (priceLevel > 0) { //kallis
 			customPinView.pinColor = MKPinAnnotationColorRed;
 		}
 		else {
@@ -261,8 +271,7 @@
 	if ([Engine sharedInstance].selectedCalculationType == 1) //byDistance
 	{
 		if ([self closestStation:annotation]) {
-			customPinView.pinColor = MKPinAnnotationColorGreen;
-			[self addRouteTo:annotation.coordinate];
+			customPinView.pinColor = MKPinAnnotationColorGreen;			
 		}
 		else {
 			customPinView.pinColor = MKPinAnnotationColorRed;
@@ -279,9 +288,15 @@
 	return customPinView;
 }
 
+//käyttäjä valitsi jonkun pinnin
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+	//[self addRouteTo:view.annotation.coordinate];
+}
+
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-	StationAnnotation *annotation = view.annotation;
+	StationAnnotation *annotation = view.annotation;	
 	CMLog(@"Valitsi: %@", annotation.title);
 	[parent showDetailsWithData:annotation.dataItem]; //varoittaa ihan turhaan?
 	

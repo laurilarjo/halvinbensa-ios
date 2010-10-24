@@ -24,7 +24,7 @@
 	
 }
 
-- (void)confirmPrice:(UIButton *)sender
+- (IBAction)confirmPrice:(UIButton *)sender
 {
 	if (sender == confirm95EButton)
 	{
@@ -49,7 +49,7 @@
 	}
 }
 
-- (void)changePrice:(UIButton *)sender 
+- (IBAction)changePrice:(UIButton *)sender 
 {
 	if (sender == change95EButton)
 	{
@@ -74,7 +74,7 @@
 	
 }
 
-- (void)priceUploaded:(PriceItem *)item
+- (IBAction)priceUploaded:(PriceItem *)item
 {
 	CMLog(@"%@ uploaded", item.type);
 	item.uploaded = YES;
@@ -98,6 +98,14 @@
 		default:
 			break;
 	}
+}
+
+- (IBAction)displayRoute:(UIButton *)sender
+{
+	CMLog(@"posting notification");
+	[self.navigationController popViewControllerAnimated:YES];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"displayRoutePressed" object:self.currentStation];		
+	
 }
 
 #pragma mark ViewController stuff
