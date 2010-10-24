@@ -50,6 +50,11 @@ static Engine *sharedEngine = nil;
 	return [stationServer stationsForMapRegion:region];
 }
 
+- (CLLocationDistance)getDirectDistanceFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination
+{
+	return [googleDirections getDirectDistanceFrom:origin to:destination];
+}
+
 - (NSArray *)findRouteFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination
 {
 	return [googleDirections findRouteFrom:origin to:destination];

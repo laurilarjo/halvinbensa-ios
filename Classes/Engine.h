@@ -27,7 +27,12 @@
 @property (nonatomic, retain) NSMutableArray *mapAnnotations;
 
 + (Engine *) sharedInstance;
+
+//station serveriltä
 - (NSArray *)stationsForMapRegion:(MKCoordinateRegion)region;
+
+//google directions luokasta
+- (CLLocationDistance)getDirectDistanceFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination;
 - (NSArray *)findRouteFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination;
 
 @end

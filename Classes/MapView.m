@@ -130,40 +130,11 @@
 		{
 			CLLocationCoordinate2D origin = [[mapView userLocation] location].coordinate;
 			CLLocationCoordinate2D destination = item.coordinate;
-			CLLocationDistance distance = 2.0;//[googleDirections getDirectDistanceFrom:origin to:destination];
+			CLLocationDistance distance = [[Engine sharedInstance] getDirectDistanceFrom:origin to:destination];
 			item.distanceToUser = distance;
 		}
 	}
-	/*
-	 //Etsitään kaksi lähintä asemaa KESKEN
-	 NSRange range;
-	 range.location = 0; range.length = 2;
-	 NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:range];
-	 NSArray *closestStations = [NSArray arrayWithArray:[self.mapAnnotations objectsAtIndexes:indexes]];
-	 for (StationAnnotation *item in self.mapAnnotations) {
-	 if (item.distanceToUser < closest.distanceToUser)
-	 {
-	 closest = item;
-	 }
-	 }
-	 for (StationAnnotation *item in [self mapAnnotations]) {
-	 
-	 }
-	 
-	 //Seuraavaksi haetaan Googlesta kahden lähimmän reitin pituudet talteen
-	 for (StationAnnotation *item in [self mapAnnotations]) {
-	 if (item.distanceToUser < 1.0)
-	 {
-	 CLLocationCoordinate2D origin = [[mapView userLocation] location].coordinate;
-	 CLLocationCoordinate2D destination = item.coordinate;
-	 CLLocationDistance distance = [[googleDirections findRouteFrom:origin to:destination] doubleValue];
-	 
-	 item.distanceToUser = distance;
-	 
-	 }
-	 }
-	 */
-	
+		
 	//Sitten katsotaan onko tämä nyt se lähin NÄKYVISTÄ asemista
 	StationAnnotation *closest = [[mapView annotations] objectAtIndex:0];
 	for (StationAnnotation *item in [mapView annotations]) {
