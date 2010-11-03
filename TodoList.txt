@@ -11,6 +11,11 @@ http://www.xprogress.com/post-44-how-to-parse-json-files-on-iphone-in-objective-
 http://mobile.tutsplus.com/tutorials/iphone/iphone-json-twitter-api/
 http://mobileorchard.com/tutorial-json-over-http-on-the-iphone/
 
+HTTP-kirjasto, googlen tekemä:
+http://code.google.com/p/gtm-http-fetcher/
+Networkindicator helpperi:
+http://aralbalkan.com/3602#more-3602
+
 Seuraavaksi:
 DONE: tee kunnon nappula jolla on taustakuva, ainakin Hyväksy-nappi
 DONE: kun hinta on päivitetty, poista check ja ruksi, korvaa "päivitetty"-tekstillä
@@ -23,6 +28,7 @@ DONE: options-sivulle mahdollisuus ruksia mitkä bensojen hinnat haluaa näyttä
 DONE: toteuta refresh
 DONE: laske lähimmän aseman sijainti ja näytä se kartalla vihreällä, muut punaisella
 DONE: google directions kunnolla käyttöön. nyt kun valitsee aseman, voi klikata näytä reitti kartalla, jonka jälkeen tehdään google haku ja piirretään reitti
+- asenna ja laita kuntoon laitteeseen
 - webservice juttua..
 - kun hintaa päivitetään, näytä spinneri check ja ruksin kohdalla
 - laske optimin asemien sijainnit ja näytä ne kartalla vihreällä, muut punaisella

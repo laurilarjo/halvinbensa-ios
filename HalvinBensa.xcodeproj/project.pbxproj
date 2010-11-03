@@ -441,6 +441,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HalvinBensa_Prefix.pch;
 				INFOPLIST_FILE = "HalvinBensa-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = HalvinBensa;
 			};
@@ -459,6 +460,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HalvinBensa_Prefix.pch;
 				INFOPLIST_FILE = "HalvinBensa-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = HalvinBensa;
 				VALIDATE_PRODUCT = YES;
