@@ -52,7 +52,7 @@
 			PriceItem *price = [[PriceItem alloc] init];
 			[price setValuesForKeysWithDictionary:obj];
 			//convert date
-			price.date = [formatter dateFromString:[obj valueForKey:@"date"]];
+			price.updated = [formatter dateFromString:[obj valueForKey:@"date"]];
 			//convert price
 			price.price = [NSNumber numberWithDouble:[price.price doubleValue]];
 			[newPrices addObject:price];

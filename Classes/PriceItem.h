@@ -13,7 +13,7 @@
 
 	NSInteger stationId;
 	NSString *type;
-	NSDate *date;
+	NSDate *updated;
 	NSNumber *price;
 	bool uploaded; //ei uploadata tätä nettiin
 	
@@ -21,7 +21,7 @@
 
 @property NSInteger stationId;
 @property (nonatomic, retain) NSString *type;
-@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, retain) NSDate *updated;
 @property (nonatomic, retain) NSNumber *price;
 @property bool uploaded;
 

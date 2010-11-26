@@ -12,7 +12,7 @@
 @implementation StationItem
 
 @synthesize uid, latitude, longitude, title, company,
-	address, city, prices;
+	address, city, prices, resource_uri;
 
 
 - (BOOL)isEqual:(id)other {
@@ -42,6 +42,8 @@
 		return NO;
 	if (![city isEqualToString:other.city])
 		return NO;
+	if (![resource_uri isEqualToString:other.resource_uri])
+		return NO;
 	return YES;
 }
 
@@ -57,6 +59,7 @@
 		[self setAddress:item.address];
 		[self setCity:item.city];
 		[self setPrices:item.prices];
+		[self setResource_uri:item.resource_uri];
 
 	}
 	return self;
@@ -71,6 +74,7 @@
 	[address release];
 	[city release];
 	[prices release];
+	[resource_uri release];
 	[super dealloc];
 }
 

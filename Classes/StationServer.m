@@ -24,16 +24,27 @@
     //NSNumber *longitudeStart = [NSNumber numberWithDouble:region.center.longitude - region.span.longitudeDelta/2.0];
     //NSNumber *longitudeStop = [NSNumber numberWithDouble:region.center.longitude + region.span.longitudeDelta/2.0];
     
-	//kutsu servua ja kerää alue
-	FileReaderHelper *helper = [[FileReaderHelper alloc] init];
-	NSArray *items = [helper getStationItems];
+	//kutsu servua ja kerää asemat
+	NSString* apiUrlStr = [NSString stringWithFormat:@"http://halvinbensa.appspot.com/api/stations"];
+	if (TARGET_IPHONE_SIMULATOR)
+	{
+		apiUrlStr = [NSString stringWithFormat:@"http://localhost:8000/api/stations"];
+	}
+	
+	NSURL* apiUrl = [NSURL URLWithString:apiUrlStr];
+	CMLog(@"Kutsutaan: %@", apiUrl);
+	NSString *apiResponse = [NSString stringWithContentsOfURL:apiUrl];
+	CMLog(@"Vastaus: %@", apiResponse);
+	
+	StationReader *reader = [[StationReader alloc] init];
+	NSArray *items = [reader getStationItems:apiResponse];
 	
 	for (StationItem *item in items) {
 		StationAnnotation *annotation = [[StationAnnotation alloc] initWithItem:item];
 		[results addObject:annotation];
 		[annotation release];
 	}
-	[helper release];
+	[reader release];
 	
 	return results;
 }

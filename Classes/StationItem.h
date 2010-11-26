@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PriceItem.h"
 
 enum Prices {
 	Price95E = 0,
@@ -24,6 +25,7 @@ enum Prices {
 	NSString *address;
 	NSString *city;
 	NSArray *prices; //contains PriceItems
+	NSString *resource_uri;
 
 }
 
@@ -35,6 +37,7 @@ enum Prices {
 @property (nonatomic, retain) NSString *address;
 @property (nonatomic, retain) NSString *city;
 @property (nonatomic, retain) NSArray *prices;
+@property (nonatomic, retain) NSString *resource_uri;
 
 -(id)initWithItem:(StationItem *)item;
 - (BOOL)isEqualToStationItem:(StationItem *)other;

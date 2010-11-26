@@ -176,7 +176,7 @@
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];	
 	[formatter setDateFormat:@"d.M.Y"];
 	//TODO: nyt näyttää vain 95E:n päiväyksen
-	NSDate *date = [[currentStation.prices objectAtIndex:Price95E] date];
+	NSDate *date = [[currentStation.prices objectAtIndex:Price95E] updated];
 	dateLabel.text = [formatter stringFromDate:date];
 	[formatter release];
 }

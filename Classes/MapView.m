@@ -162,7 +162,31 @@
 {
 	NSArray *oldAnnotations = [self.mapView annotations];
 	[self.mapView removeAnnotations:oldAnnotations];
-	[mapView.delegate mapView:mapView regionDidChangeAnimated:YES];	 
+	
+	CMLog(@"Annotations in mapView before: %d", [[mapView annotations] count]);
+	CMLog(@"Annotations in storage before: %d", [[Engine sharedInstance].mapAnnotations count]);
+	
+	//haetaan kartalla näkyvät asemat
+	NSArray *items = [[Engine sharedInstance] stationsForMapRegion:mapView.region];
+	
+	//kerää uudet asemat omaan muistiin
+	for (StationAnnotation *item in items) {
+		if (![[Engine sharedInstance].mapAnnotations containsObject:item]) {
+			[[Engine sharedInstance].mapAnnotations addObject:item];
+		}
+	}
+	
+	//lisää uudet asemat kartalle
+	for (StationAnnotation *item in [Engine sharedInstance].mapAnnotations) {
+		if (![[mapView annotations] containsObject:item])
+			[mapView addAnnotation:item];
+	}
+	
+	//filtteröi pois asemat, joilla ei ole käytetyn bensan hintatietoa
+	[self filterStationsBySelectedFuelType];
+	
+	CMLog(@"Annotations in mapView after: %d", [[mapView annotations] count]);
+	CMLog(@"Annotations in storage after: %d", [[Engine sharedInstance].mapAnnotations count]); 
 }
 
 #pragma mark -
@@ -176,6 +200,7 @@
 //Tähän tullaan käynnistyksessä kaksi kertaa, sillä alussa siirrytään käyttäjän kohdalle
 - (void)mapView:(MKMapView *)map regionDidChangeAnimated:(BOOL)animated
 {
+	/*
 	CMLog(@"Annotations in mapView before: %d", [[mapView annotations] count]);
 	CMLog(@"Annotations in storage before: %d", [[Engine sharedInstance].mapAnnotations count]);
 	
@@ -200,6 +225,7 @@
 	
 	CMLog(@"Annotations in mapView after: %d", [[mapView annotations] count]);
 	CMLog(@"Annotations in storage after: %d", [[Engine sharedInstance].mapAnnotations count]);
+	 */
 	
 }
 

@@ -10,6 +10,7 @@
 #import "StationAnnotation.h"
 #import "Debug.h"
 #import "FileReaderHelper.h"
+#import "StationReader.h"
 
 @interface StationServer : NSObject 
 {
